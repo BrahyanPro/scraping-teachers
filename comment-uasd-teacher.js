@@ -131,10 +131,12 @@ const processTeacherData = async () => {
 
   console.time('ProcessingTime'); // Inicia el temporizador para el proceso completo.
 
-  let allComments = [];
+  const allComments = [];
   for (const [idx, teacher] of teacherData.entries()) {
     if ((idx >= 2 && idx !== 1378) || idx > 1378) continue; // Salta el índice 2 y 1378.
     console.log(`Processing index: ${idx} - ${teacher.name}`);
+
+    const teacherData = { name: teacher.name, id: teacher.id, comments: [] }; // Crea un objeto de datos del profesor.
 
     const cleanName = formatTeacherName(teacher.name); // Limpia el nombre del profesor.
     if (idx === 1378) {
@@ -143,7 +145,6 @@ const processTeacherData = async () => {
       await page.fill('input[name="query"]', cleanName); // Rellena el campo de búsqueda con el nombre limpio.
     }
     // Realiza un clic en el botón de búsqueda y espera la navegación.
-    await page.fill('input[name="query"]', cleanName);
     await page.click('button[type="submit"]');
     await page.waitForNavigation({ waitUntil: 'networkidle' });
 
@@ -157,7 +158,7 @@ const processTeacherData = async () => {
 
       // Extract all comments from the current page
       const comments = await extractComments(page);
-      allComments.push(...comments);
+      teacherData.comments.push(...comments);
 
       // Handle pagination
       const totalPages = await page.$$eval(
@@ -168,14 +169,18 @@ const processTeacherData = async () => {
         await page.click(`button[wire\\:click="gotoPage(${pageNumber}, 'page')"]`);
         await page.waitForNavigation({ waitUntil: 'networkidle' });
         const comments = await extractComments(page);
-        allComments.push(...comments);
+        teacherData.comments.push(...comments);
       }
     }
 
+    allComments.push(teacherData); // Agrega los datos del profesor a la lista de comentarios.
     // Regresa a la página de inicio para la próxima búsqueda.
     await page.goto('https://www.nuevosemestre.com/'); // Vuelve a cargar la página inicial.
   }
 
+  // Guarda todos los comentarios en un archivo JSON.
+  console.log('Guardando comentarios en un archivo JSON...');
+  await fs.writeFile('comments-uasd-teachers.json', JSON.stringify(allComments, null, 2));
   console.log(JSON.stringify(allComments));
   await browser.close(); // Cierra el navegador al finalizar todas las operaciones.
   console.timeEnd('ProcessingTime'); // Termina la medición del tiempo de proceso.
@@ -194,9 +199,10 @@ const formatTeacherName = name => {
 const extractComments = async page => {
   return page.$$eval('div[x-data="{ reply_box_is_visible: false }"]', comments =>
     comments.map(comment => {
+      console.log(comment);
       const username = comment.querySelector('p').textContent;
       const period = comment.querySelector('p.text-sm').textContent;
-      const content = comment.querySelector('p.dark:bg-neutral-950').textContent;
+      const content = comment.querySelector('p.bg-neutral-300').textContent;
       return { username, period, content };
     })
   );
