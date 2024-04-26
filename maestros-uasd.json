@@ -53856,19 +53856,5 @@
     "otros_descuentos": 325,
     "descuento_total": 614.35,
     "sueldo_total_neto": 4281.63
-  },
-  {
-    "id": "TOTAL GENERAL",
-    "sueldo_bruto": 463539371.6099994,
-    "otros_ingresos": 37224568.220000006,
-    "total_ingresos": 500763939.829999,
-    "isr": 75631398.03000015,
-    "afp": 13297452.410000002,
-    "sfs": 12218455.070000168,
-    "otros_descuentos": 111934833.87000012,
-    "descuento_total": 213082139.3799999,
-    "sueldo_total_neto": 287681800.44999975
-  },
-  {},
-  {}
+  }
 ]
