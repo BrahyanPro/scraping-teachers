@@ -37,7 +37,7 @@ const processTeacherData = async () => {
 
     if (numOpiniones > 0) {
       await page.click('a[href*="profesor/"][class*="bg-sky-700"]'); // Hace clic en el enlace si hay más de 0 opiniones.
-      await page.waitForNavigation({ waitUntil: 'networkidle' }); // Espera hasta que la red esté casi inactiva.
+      await page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 }); // Espera hasta que la red esté casi inactiva.
 
       // Extract all comments from the current page
       const comments = await extractComments(page);
@@ -50,7 +50,7 @@ const processTeacherData = async () => {
       );
       for (let pageNumber = 2; pageNumber <= totalPages; pageNumber++) {
         await page.click(`button[wire\\:click="gotoPage(${pageNumber}, 'page')"]`);
-        await page.waitForNavigation({ waitUntil: 'networkidle' });
+        await page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 });
         const comments = await extractComments(page);
         teacherData.comments.push(...comments);
       }
