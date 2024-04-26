@@ -20,10 +20,18 @@ function readExcelFile(filePath) {
     id: row[0],
     gender: row[1],
     name: row[2],
+    area: row[3],
     role: row[4],
+    status: row[5],
+    fecha_ingreso: row[6],
     sueldo_bruto: row[7],
-    sueldo_total: row[9],
-    descuento: row[14],
+    otros_ingresos: row[8],
+    total_ingresos: row[9],
+    isr: row[10],
+    afp: row[11],
+    sfs: row[12],
+    otros_descuentos: row[13],
+    descuento_total: row[14],
     sueldo_total_neto: row[15]
   }));
 
