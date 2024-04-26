@@ -132,7 +132,7 @@ const processTeacherData = async () => {
   console.time('ProcessingTime'); // Inicia el temporizador para el proceso completo.
 
   for (const [idx, teacher] of teacherData.entries()) {
-    console.log(`Processing index: ${idx}`);
+    console.log(`Processing index: ${idx} - ${teacher.name}`);
     if (idx >= 2 && idx !== 1378) continue; // Limita el bucle a los primeros cuatro profesores.
     const words = teacher.name.trim().split(/\s+/);
     if (words.length >= 4) {
@@ -140,6 +140,8 @@ const processTeacherData = async () => {
     }
     const cleanName = words.join(' ');
     await page.fill('input[name="query"]', cleanName); // Rellena el campo de búsqueda con el nombre limpio.
+    //screen shot
+    await page.screenshot({ path: `./screenshots/${cleanName}-search.png` });
 
     // Realiza un clic en el botón de búsqueda y espera la navegación.
     await Promise.all([
