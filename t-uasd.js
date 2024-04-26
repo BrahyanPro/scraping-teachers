@@ -41,6 +41,7 @@ function readExcelFile(filePath) {
 async function saveTeachersToJsonFile(filePath, jsonFilePath) {
   const teachers = readExcelFile(filePath);
   try {
+    console.log('Guardando datos en el archivo JSON...');
     await writeFile(jsonFilePath, JSON.stringify(teachers, null, 2));
     console.log(`Datos guardados con éxito en ${jsonFilePath}`);
   } catch (error) {
@@ -50,7 +51,5 @@ async function saveTeachersToJsonFile(filePath, jsonFilePath) {
 
 // Uso del método
 const filePath = './analice.xlsx';
-const teachers = readExcelFile(filePath);
-
-console.log(teachers);
-console.log(teachers.length);
+const jsonFilePath = 'maestros-uasd.json';
+saveTeachersToJsonFile(filePath, jsonFilePath);
