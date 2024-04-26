@@ -11,8 +11,17 @@ const processTeacherData = async () => {
 
   const allComments = [];
   const notAvailable = [];
+  let count = 0;
   for (const [idx, teacher] of teacherData.entries()) {
+    //118;
     //if ((idx >= 2 && idx !== 1378) || idx > 1378) continue; // Salta el índice 2 y 1378.
+    //if (idx < 118) continue;
+    count++;
+    if (count % 60 === 0) {
+      console.log('Taking a pause...');
+      await pauseProcessing();
+      await saveData(allComments, notAvailable);
+    }
     console.log('\x1b[32m%s\x1b[0m', `%c Processing index: ${idx} - ${teacher.name}`);
 
     const teacherData = { name: teacher.name, id: teacher.id, comments: [] }; // Crea un objeto de datos del profesor.
@@ -61,15 +70,33 @@ const processTeacherData = async () => {
   }
 
   // Guarda todos los comentarios en un archivo JSON.
-  console.log('Guardando comentarios en un archivo JSON...');
-  await fs.writeFile('comments-uasd-teachers.json', JSON.stringify(allComments, null, 2));
-
-  console.log('Guardando profesores sin comentarios en un archivo JSON...');
-  await fs.writeFile('not-available-teachers.json', JSON.stringify(notAvailable, null, 2));
-
+  await saveData(allComments, notAvailable);
   await browser.close(); // Cierra el navegador al finalizar todas las operaciones.
   console.timeEnd('ProcessingTime'); // Termina la medición del tiempo de proceso.
 };
+
+async function saveData(comments, notAvailable) {
+  console.log('Saving data...');
+  await fs.writeFile('comments-uasd-teachers.json', JSON.stringify(comments, null, 2));
+  await fs.writeFile('not-available-teachers.json', JSON.stringify(notAvailable, null, 2));
+}
+
+function pauseProcessing() {
+  return new Promise(resolve => setTimeout(resolve, 60000)); // 10-second pause
+}
+
+async function safeNavigation(page, selector) {
+  try {
+    await Promise.all([
+      page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 }),
+      page.click(selector)
+    ]);
+    return true;
+  } catch (error) {
+    console.error('Navigation error:', error);
+    return false;
+  }
+}
 
 processTeacherData().catch(console.error); // Inicia el proceso de procesamiento de datos de profesores.
 
