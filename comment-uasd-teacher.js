@@ -133,9 +133,11 @@ const processTeacherData = async () => {
 
   for (const [idx, teacher] of teacherData.entries()) {
     if (idx >= 2) break; // Limita el bucle a los primeros cuatro profesores.
-
-    console.log(teacher);
-    const cleanName = teacher.name.trim().replace(/\s+/g, ' '); // Limpia y prepara el nombre del profesor.
+    const words = teacher.name.trim().split(/\s+/);
+    if (words.length >= 4) {
+      words.splice(1, 1); // Elimina la segunda palabra si hay más de cuatro palabras.
+    }
+    const cleanName = words.join(' ');
     await page.fill('input[name="query"]', cleanName); // Rellena el campo de búsqueda con el nombre limpio.
 
     // Realiza un clic en el botón de búsqueda y espera la navegación.
