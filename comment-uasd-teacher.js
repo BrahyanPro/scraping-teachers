@@ -132,14 +132,20 @@ const processTeacherData = async () => {
   console.time('ProcessingTime'); // Inicia el temporizador para el proceso completo.
 
   for (const [idx, teacher] of teacherData.entries()) {
-    console.log(`Processing index: ${idx} - ${teacher.name}`);
+    //console.log(`Processing index: ${idx} - ${teacher.name}`);
     if (idx >= 2 && idx !== 1378) continue; // Limita el bucle a los primeros cuatro profesores.
     const words = teacher.name.trim().split(/\s+/);
     if (words.length >= 4) {
       words.splice(1, 1); // Elimina la segunda palabra si hay más de cuatro palabras.
     }
     const cleanName = words.join(' ');
-    await page.fill('input[name="query"]', cleanName); // Rellena el campo de búsqueda con el nombre limpio.
+
+    if (idx === 1378) {
+      await page.fill('input[name="query"]', 'Carlos Manuel Dicent Decena'); // Rellena el campo de búsqueda con el nombre limpio.
+    } else {
+      await page.fill('input[name="query"]', cleanName); // Rellena el campo de búsqueda con el nombre limpio.
+    }
+
     //screen shot
     await page.screenshot({ path: `./screenshots/${cleanName}-search.png` });
 
@@ -151,6 +157,7 @@ const processTeacherData = async () => {
 
     // Espera que la página se cargue y revisa el número de opiniones.
     const opinionText = await page.textContent('a[href*="profesor/"][class*="bg-sky-700"]'); // Selector específico del enlace de opiniones.
+    console.log(opinionText, 'opinionText');
     const numOpiniones = parseInt(opinionText.match(/\d+/)[0]); // Extrae el número de opiniones.
 
     if (numOpiniones > 0) {
@@ -162,9 +169,16 @@ const processTeacherData = async () => {
       // Obtiene el número de páginas en la paginación
       const totalPages = await page.$$eval(
         'button[type="button"][wire\\:click*="gotoPage"]',
-        buttons => buttons.length
+        buttons => buttons
       );
-      console.log(`Total pages: ${totalPages}`);
+      console.log(`Total pages: ${totalPages.length}`);
+
+      if (totalPages.length > 0) {
+        totalPages.forEach(async button => {
+          console.log('clicking button');
+          console.log(button);
+        });
+      }
     }
 
     // Regresa a la página de inicio para la próxima búsqueda.
