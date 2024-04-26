@@ -1,4 +1,5 @@
-const XLSX = require('xlsx');
+import XLSX from 'xlsx';
+import { writeFile } from 'fs/promises';
 
 function readExcelFile(filePath) {
   // Cargar el archivo
