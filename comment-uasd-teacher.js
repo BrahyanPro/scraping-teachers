@@ -146,8 +146,15 @@ const processTeacherData = async () => {
       page.click('button[type="submit"]') // Realiza el clic en el botón de tipo submit.
     ]);
 
-    // Toma un screenshot después de que la página ha terminado de cargar completamente.
-    await page.screenshot({ path: `screenshot-${idx}.png` });
+    // Espera que la página se cargue y revisa el número de opiniones.
+    const opinionText = await page.textContent('a[href*="profesor/"][class*="bg-sky-700"]'); // Selector específico del enlace de opiniones.
+    const numOpiniones = parseInt(opinionText.match(/\d+/)[0]); // Extrae el número de opiniones.
+
+    if (numOpiniones > 0) {
+      await page.click('a[href*="profesor/"][class*="bg-sky-700"]'); // Hace clic en el enlace si hay más de 0 opiniones.
+      //Screen shot
+      await page.screenshot({ path: `./screenshots/${cleanName}.png` });
+    }
 
     // Limpia el campo de búsqueda para la siguiente entrada, si es necesario.
     await page.fill('input[name="query"]', ''); // Prepara el campo para la siguiente búsqueda.
