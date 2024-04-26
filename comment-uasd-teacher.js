@@ -25,7 +25,6 @@ const processTeacherData = async () => {
       page.waitForNavigation({ waitUntil: 'networkidle' }),
       page.click('button[type="submit"]')
     ]);
-    await page.waitForNavigation({ waitUntil: 'networkidle' });
 
     const noOpinionsAvailable = await page.$(
       'img[src="https://www.nuevosemestre.com/images/confused.svg"]'
