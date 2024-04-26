@@ -1,19 +1,6 @@
 [
   {
     "id": 1379,
-    "gender": "M",
-    "name": "Carlos Manuel Dicent Decena",
-    "role": "Profesor",
-    "status": "CONTRATADO",
-    "fecha_ingreso": 41730,
-    "sueldo_bruto": 164659,
-    "otros_ingresos": 0,
-    "total_ingresos": 164659,
-    "isr": 27380.59,
-    "afp": 4725.71,
-    "sfs": 4742.4,
-    "otros_descuentos": 35725,
-    "descuento_total": 72573.7,
-    "sueldo_total_neto": 92085.3
+    "name": "Carlos Manuel Dicent Decena"
   }
 ]
