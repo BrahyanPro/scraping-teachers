@@ -1,27 +1,5 @@
 [
   {
-    "id": "PAGO DE NOMINA DOCENTE CORRESPONDIENTE A ABRIL 2024"
-  },
-  {},
-  {
-    "id": "NUM.",
-    "gender": "SEXO",
-    "name": "Nombre_apellido",
-    "area": "Departamento",
-    "role": "Funcion_o_puesto",
-    "status": "Estado",
-    "fecha_ingreso": "Desde",
-    "sueldo_bruto": "Sueldo_bruto",
-    "otros_ingresos": "Otros_ingresos",
-    "total_ingresos": "Total_ingresos",
-    "isr": "ISR",
-    "afp": "AFP",
-    "sfs": "SFS",
-    "otros_descuentos": "Otros_descuentos",
-    "descuento_total": "Total_descuentos",
-    "sueldo_total_neto": "Total_neto"
-  },
-  {
     "id": 1,
     "gender": "M",
     "name": "Editrudis  Beltran Crisostomo",

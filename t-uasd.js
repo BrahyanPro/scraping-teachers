@@ -14,6 +14,9 @@ function readExcelFile(filePath) {
 
   // Eliminar la fila de encabezados
   jsonData.shift();
+  jsonData.shift();
+  jsonData.shift();
+  jsonData.shift();
 
   // Mapear los datos a un array de objetos, suponiendo que las columnas son id, nombre, asignatura y email en ese orden
   const teachers = jsonData.map(row => ({
