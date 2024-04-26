@@ -19,7 +19,7 @@ const processTeacherData = async () => {
     const cleanName = formatTeacherName(teacher.name);
     await page.fill('input[name="query"]', cleanName);
     await Promise.all([
-      page.waitForNavigation({ waitUntil: 'networkidle' }),
+      page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 }),
       page.click('button[type="submit"]')
     ]);
 
