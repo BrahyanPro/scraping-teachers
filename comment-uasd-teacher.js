@@ -12,7 +12,7 @@ const processTeacherData = async () => {
   const allComments = [];
   const notAvailable = [];
   for (const [idx, teacher] of teacherData.entries()) {
-    if ((idx >= 2 && idx !== 1378) || idx > 1378) continue; // Salta el índice 2 y 1378.
+    //if ((idx >= 2 && idx !== 1378) || idx > 1378) continue; // Salta el índice 2 y 1378.
     console.log(
       `%c Processing index: ${idx} - ${teacher.name}`,
       'background: blue;padding: 100000px;'
