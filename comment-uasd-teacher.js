@@ -30,7 +30,7 @@ const processTeacherData = async () => {
       'img[src="https://www.nuevosemestre.com/images/confused.svg"]'
     );
     if (noOpinionsAvailable) {
-      notAvailable.push({ id: teacher.id, name: teacher.name });
+      notAvailable.push(teacher);
       continue;
     }
 
