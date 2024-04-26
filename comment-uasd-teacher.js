@@ -131,53 +131,44 @@ const processTeacherData = async () => {
 
   console.time('ProcessingTime'); // Inicia el temporizador para el proceso completo.
 
+  let allComments = [];
   for (const [idx, teacher] of teacherData.entries()) {
-    //console.log(`Processing index: ${idx} - ${teacher.name}`);
-    if (idx >= 2 && idx !== 1378) continue; // Limita el bucle a los primeros cuatro profesores.
-    const words = teacher.name.trim().split(/\s+/);
-    if (words.length >= 4) {
-      words.splice(1, 1); // Elimina la segunda palabra si hay más de cuatro palabras.
-    }
-    const cleanName = words.join(' ');
+    if ((idx >= 2 && idx !== 1378) || idx > 1378) continue; // Salta el índice 2 y 1378.
+    console.log(`Processing index: ${idx} - ${teacher.name}`);
 
+    const cleanName = formatTeacherName(teacher.name); // Limpia el nombre del profesor.
     if (idx === 1378) {
       await page.fill('input[name="query"]', 'Carlos Manuel Dicent Decena'); // Rellena el campo de búsqueda con el nombre limpio.
     } else {
       await page.fill('input[name="query"]', cleanName); // Rellena el campo de búsqueda con el nombre limpio.
     }
-
-    //screen shot
-    await page.screenshot({ path: `./screenshots/${cleanName}-search.png` });
-
     // Realiza un clic en el botón de búsqueda y espera la navegación.
-    await Promise.all([
-      page.waitForNavigation({ waitUntil: 'networkidle' }), // Espera hasta que la red esté casi inactiva.
-      page.click('button[type="submit"]') // Realiza el clic en el botón de tipo submit.
-    ]);
+    await page.fill('input[name="query"]', cleanName);
+    await page.click('button[type="submit"]');
+    await page.waitForNavigation({ waitUntil: 'networkidle' });
 
     // Espera que la página se cargue y revisa el número de opiniones.
     const opinionText = await page.textContent('a[href*="profesor/"][class*="bg-sky-700"]'); // Selector específico del enlace de opiniones.
-    console.log(opinionText, 'opinionText');
     const numOpiniones = parseInt(opinionText.match(/\d+/)[0]); // Extrae el número de opiniones.
 
     if (numOpiniones > 0) {
       await page.click('a[href*="profesor/"][class*="bg-sky-700"]'); // Hace clic en el enlace si hay más de 0 opiniones.
       await page.waitForNavigation({ waitUntil: 'networkidle' }); // Espera hasta que la red esté casi inactiva.
-      //Screen shot
-      await page.screenshot({ path: `./screenshots/${cleanName}.png` });
 
-      // Obtiene el número de páginas en la paginación
+      // Extract all comments from the current page
+      const comments = await extractComments(page);
+      allComments.push(...comments);
+
+      // Handle pagination
       const totalPages = await page.$$eval(
         'button[type="button"][wire\\:click*="gotoPage"]',
-        buttons => buttons
+        buttons => buttons.length
       );
-      console.log(`Total pages: ${totalPages.length}`);
-
-      if (totalPages.length > 0) {
-        totalPages.forEach(async button => {
-          console.log('clicking button');
-          console.log(button);
-        });
+      for (let pageNumber = 2; pageNumber <= totalPages; pageNumber++) {
+        await page.click(`button[wire\\:click="gotoPage(${pageNumber}, 'page')"]`);
+        await page.waitForNavigation({ waitUntil: 'networkidle' });
+        const comments = await extractComments(page);
+        allComments.push(...comments);
       }
     }
 
@@ -185,8 +176,28 @@ const processTeacherData = async () => {
     await page.goto('https://www.nuevosemestre.com/'); // Vuelve a cargar la página inicial.
   }
 
+  console.log(JSON.stringify(allComments));
   await browser.close(); // Cierra el navegador al finalizar todas las operaciones.
   console.timeEnd('ProcessingTime'); // Termina la medición del tiempo de proceso.
 };
 
 processTeacherData().catch(console.error); // Inicia el proceso de procesamiento de datos de profesores.
+
+const formatTeacherName = name => {
+  let words = name.trim().split(/\s+/);
+  if (words.length >= 4) {
+    words.splice(1, 1); // Remove the second word if more than four words.
+  }
+  return words.join(' ');
+};
+
+const extractComments = async page => {
+  return page.$$eval('div[x-data="{ reply_box_is_visible: false }"]', comments =>
+    comments.map(comment => {
+      const username = comment.querySelector('p').textContent;
+      const period = comment.querySelector('p.text-sm').textContent;
+      const content = comment.querySelector('p.dark:bg-neutral-950').textContent;
+      return { username, period, content };
+    })
+  );
+};
