@@ -147,18 +147,6 @@ const processTeacherData = async () => {
       page.click('button[type="submit"]') // Realiza el clic en el botón de tipo submit.
     ]);
 
-    const noResult = await validationNoResult(page); // Valida si no hay resultados.
-
-    if (noResult) {
-      await page.fill('input[name="query"]', teacher.name.replace(/\s+/g, ' ')); // Rellena el campo de búsqueda con el nombre limpio.
-      // Realiza un clic en el botón de búsqueda y espera la navegación.
-      await Promise.all([
-        page.waitForNavigation({ waitUntil: 'networkidle' }), // Espera hasta que la red esté casi inactiva.
-        page.click('button[type="submit"]') // Realiza el clic en el botón de tipo submit.
-      ]);
-      const noResult = await validationNoResult(page); // Valida si no hay resultados.
-    }
-
     // Espera que la página se cargue y revisa el número de opiniones.
     const opinionText = await page.textContent('a[href*="profesor/"][class*="bg-sky-700"]'); // Selector específico del enlace de opiniones.
     const numOpiniones = parseInt(opinionText.match(/\d+/)[0]); // Extrae el número de opiniones.
@@ -186,10 +174,3 @@ const processTeacherData = async () => {
 };
 
 processTeacherData().catch(console.error); // Inicia el proceso de procesamiento de datos de profesores.
-
-const validationNoResult = async page => {
-  const noResult = await page.textContent(
-    'p[class="text-lg dark:text-neutral-400 text-neutral-600 mb-2"]'
-  );
-  return noResult === 'Hmmmm, ¿Qué habrá ocurrido?';
-};
