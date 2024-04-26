@@ -124,30 +124,32 @@ import teacherData from './maestros-uasd.json' assert { type: 'json' };
 //extractCareerLinks().catch(console.error);
 // TODO Hacerlo mas optimo rendimiento actual por debajo de la media
 
-const pageForExtract = async () => {
-  const browser = await chromium.launch({ headless: false }); // 'headless: false' para ver lo que sucede en el navegador.
-  const page = await browser.newPage();
-  await page.goto('https://www.nuevosemestre.com/');
-  return { page, browser };
-};
+const processTeacherData = async () => {
+  const browser = await chromium.launch({ headless: true }); // Lanza el navegador en modo headless.
+  const page = await browser.newPage(); // Abre una nueva página.
+  await page.goto('https://www.nuevosemestre.com/'); // Va a la página solo una vez.
 
-teacherData.forEach(async (teacher, idx) => {
-  console.log(teacher);
-  if (idx >= 4) {
-    // stop the loop
-    return;
+  console.time('ProcessingTime'); // Inicia el temporizador para el proceso completo.
+
+  for (const [idx, teacher] of teacherData.entries()) {
+    if (idx >= 2) break; // Limita el bucle a los primeros cuatro profesores.
+
+    console.log(teacher);
+    const cleanName = teacher.name.trim().replace(/\s+/g, ' '); // Limpia y prepara el nombre del profesor.
+    await page.fill('input[name="query"]', cleanName); // Rellena el campo de búsqueda con el nombre limpio.
+
+    // Realiza un clic en el botón de búsqueda y espera la navegación simultáneamente.
+    const [response] = await Promise.all([
+      page.click('button[type="submit"]'), // Realiza el clic en el botón de tipo submit.
+      page.waitForNavigation({ waitUntil: 'networkidle' }), // Espera hasta que la red esté casi inactiva.
+      await page.screenshot({ path: `screenshot-${idx}.png` })
+    ]);
+    // Limpia el campo de búsqueda para la siguiente entrada, si es necesario.
+    await page.fill('input[name="query"]', ''); // Prepara el campo para la siguiente búsqueda.
   }
 
-  const { page, browser } = await pageForExtract();
-  // Asegúrate de reemplazar 'selector-del-input' con el selector CSS correcto del campo de entrada en la página web.
-  await page.fill('selector-del-input', teacher.name); // Suponiendo que 'teacher.name' es el dato que quieres escribir.
-  await page.screenshot({ path: `screenshot-${idx}.png` }); // Guarda un screenshot en el directorio actual.
-  await browser.close(); // Cierra el navegador después de cada operación.
-});
+  await browser.close(); // Cierra el navegador al finalizar todas las operaciones.
+  console.timeEnd('ProcessingTime'); // Termina la medición del tiempo de proceso.
+};
 
-let nombre = 'Editrudis  Beltran Crisostomo';
-// Elimina espacios al principio y al final
-let nombreLimpiado = nombre.trim();
-// Reemplaza múltiples espacios por uno solo en el medio del texto
-let nombreFinal = nombreLimpiado.replace(/\s+/g, ' ');
-console.log(nombreFinal);
+processTeacherData().catch(console.error); // Inicia el proceso de procesamiento de datos de profesores.
