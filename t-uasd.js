@@ -41,7 +41,7 @@ function readExcelFile(filePath) {
 async function saveTeachersToJsonFile(filePath, jsonFilePath) {
   const teachers = readExcelFile(filePath);
   try {
-    console.log('Guardando datos en el archivo JSON...');
+    console.info('Guardando datos en el archivo JSON...');
     await writeFile(jsonFilePath, JSON.stringify(teachers, null, 2));
     console.log(`Datos guardados con éxito en ${jsonFilePath}`);
   } catch (error) {
