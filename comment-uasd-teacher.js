@@ -13,10 +13,7 @@ const processTeacherData = async () => {
   const notAvailable = [];
   for (const [idx, teacher] of teacherData.entries()) {
     //if ((idx >= 2 && idx !== 1378) || idx > 1378) continue; // Salta el índice 2 y 1378.
-    console.log(
-      `%c Processing index: ${idx} - ${teacher.name}`,
-      'background: blue;padding: 100000px;'
-    );
+    console.log(`%c Processing index: ${idx} - ${teacher.name}`, 'background: blue;');
 
     const teacherData = { name: teacher.name, id: teacher.id, comments: [] }; // Crea un objeto de datos del profesor.
     const cleanName = formatTeacherName(teacher.name);
