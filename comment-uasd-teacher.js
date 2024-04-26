@@ -133,11 +133,16 @@ const pageForExtract = async () => {
 
 teacherData.forEach(async (teacher, idx) => {
   console.log(teacher);
-
   if (idx >= 4) {
     // stop the loop
     return;
   }
+
+  const { page, browser } = await pageForExtract();
+  // Asegúrate de reemplazar 'selector-del-input' con el selector CSS correcto del campo de entrada en la página web.
+  await page.fill('selector-del-input', teacher.name); // Suponiendo que 'teacher.name' es el dato que quieres escribir.
+  await page.screenshot({ path: `screenshot-${idx}.png` }); // Guarda un screenshot en el directorio actual.
+  await browser.close(); // Cierra el navegador después de cada operación.
 });
 
 let nombre = 'Editrudis  Beltran Crisostomo';
