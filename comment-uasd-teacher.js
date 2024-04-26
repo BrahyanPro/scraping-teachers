@@ -132,7 +132,8 @@ const processTeacherData = async () => {
   console.time('ProcessingTime'); // Inicia el temporizador para el proceso completo.
 
   for (const [idx, teacher] of teacherData.entries()) {
-    if (idx >= 2) break; // Limita el bucle a los primeros cuatro profesores.
+    console.log(`Processing index: ${idx}`);
+    if (idx >= 2 && idx !== 1378) continue; // Limita el bucle a los primeros cuatro profesores.
     const words = teacher.name.trim().split(/\s+/);
     if (words.length >= 4) {
       words.splice(1, 1); // Elimina la segunda palabra si hay más de cuatro palabras.
@@ -146,18 +147,38 @@ const processTeacherData = async () => {
       page.click('button[type="submit"]') // Realiza el clic en el botón de tipo submit.
     ]);
 
+    const noResult = await validationNoResult(page); // Valida si no hay resultados.
+
+    if (noResult) {
+      await page.fill('input[name="query"]', teacher.name.replace(/\s+/g, ' ')); // Rellena el campo de búsqueda con el nombre limpio.
+      // Realiza un clic en el botón de búsqueda y espera la navegación.
+      await Promise.all([
+        page.waitForNavigation({ waitUntil: 'networkidle' }), // Espera hasta que la red esté casi inactiva.
+        page.click('button[type="submit"]') // Realiza el clic en el botón de tipo submit.
+      ]);
+      const noResult = await validationNoResult(page); // Valida si no hay resultados.
+    }
+
     // Espera que la página se cargue y revisa el número de opiniones.
     const opinionText = await page.textContent('a[href*="profesor/"][class*="bg-sky-700"]'); // Selector específico del enlace de opiniones.
     const numOpiniones = parseInt(opinionText.match(/\d+/)[0]); // Extrae el número de opiniones.
 
     if (numOpiniones > 0) {
       await page.click('a[href*="profesor/"][class*="bg-sky-700"]'); // Hace clic en el enlace si hay más de 0 opiniones.
+      await page.waitForNavigation({ waitUntil: 'networkidle' }); // Espera hasta que la red esté casi inactiva.
       //Screen shot
       await page.screenshot({ path: `./screenshots/${cleanName}.png` });
+
+      // Obtiene el número de páginas en la paginación
+      const totalPages = await page.$$eval(
+        'button[type="button"][wire\\:click*="gotoPage"]',
+        buttons => buttons.length
+      );
+      console.log(`Total pages: ${totalPages}`);
     }
 
-    // Limpia el campo de búsqueda para la siguiente entrada, si es necesario.
-    await page.fill('input[name="query"]', ''); // Prepara el campo para la siguiente búsqueda.
+    // Regresa a la página de inicio para la próxima búsqueda.
+    await page.goto('https://www.nuevosemestre.com/'); // Vuelve a cargar la página inicial.
   }
 
   await browser.close(); // Cierra el navegador al finalizar todas las operaciones.
@@ -165,3 +186,10 @@ const processTeacherData = async () => {
 };
 
 processTeacherData().catch(console.error); // Inicia el proceso de procesamiento de datos de profesores.
+
+const validationNoResult = async page => {
+  const noResult = await page.textContent(
+    'p[class="text-lg dark:text-neutral-400 text-neutral-600 mb-2"]'
+  );
+  return noResult === 'Hmmmm, ¿Qué habrá ocurrido?';
+};
