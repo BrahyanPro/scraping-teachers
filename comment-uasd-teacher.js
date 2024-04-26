@@ -138,12 +138,15 @@ const processTeacherData = async () => {
     const cleanName = teacher.name.trim().replace(/\s+/g, ' '); // Limpia y prepara el nombre del profesor.
     await page.fill('input[name="query"]', cleanName); // Rellena el campo de búsqueda con el nombre limpio.
 
-    // Realiza un clic en el botón de búsqueda y espera la navegación simultáneamente.
-    const [response] = await Promise.all([
-      page.click('button[type="submit"]'), // Realiza el clic en el botón de tipo submit.
+    // Realiza un clic en el botón de búsqueda y espera la navegación.
+    await Promise.all([
       page.waitForNavigation({ waitUntil: 'networkidle' }), // Espera hasta que la red esté casi inactiva.
-      await page.screenshot({ path: `screenshot-${idx}.png` })
+      page.click('button[type="submit"]') // Realiza el clic en el botón de tipo submit.
     ]);
+
+    // Toma un screenshot después de que la página ha terminado de cargar completamente.
+    await page.screenshot({ path: `screenshot-${idx}.png` });
+
     // Limpia el campo de búsqueda para la siguiente entrada, si es necesario.
     await page.fill('input[name="query"]', ''); // Prepara el campo para la siguiente búsqueda.
   }
