@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      playwright:
+        specifier: ^1.43.0
+        version: 1.43.1
       xlsx:
         specifier: ^0.18.5
         version: 0.18.5
@@ -34,6 +37,21 @@ packages:
   frac@1.1.2:
     resolution: {integrity: sha512-w/XBfkibaTl3YDqASwfDUqkna4Z2p9cFSr1aHDt0WoMTECnRfBOv2WArlZILlqgWlmdIlALXGpM2AOhEk5W3IA==}
     engines: {node: '>=0.8'}
+
+  fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+
+  playwright-core@1.43.1:
+    resolution: {integrity: sha512-EI36Mto2Vrx6VF7rm708qSnesVQKbxEWvPrfA1IPY6HgczBplDx7ENtx+K2n4kJ41sLLkuGfmb0ZLSSXlDhqPg==}
+    engines: {node: '>=16'}
+    hasBin: true
+
+  playwright@1.43.1:
+    resolution: {integrity: sha512-V7SoH0ai2kNt1Md9E3Gwas5B9m8KR2GVvwZnAI6Pg0m3sh7UvgiYhRrhsziCmqMJNouPckiOhk8T+9bSAK0VIA==}
+    engines: {node: '>=16'}
+    hasBin: true
 
   ssf@0.11.2:
     resolution: {integrity: sha512-+idbmIXoYET47hH+d7dfm2epdOMUDjqcB4648sTZ+t2JwoyBFL/insLfB/racrDmsKB3diwsDA696pZMieAC5g==}
@@ -66,6 +84,17 @@ snapshots:
   crc-32@1.2.2: {}
 
   frac@1.1.2: {}
+
+  fsevents@2.3.2:
+    optional: true
+
+  playwright-core@1.43.1: {}
+
+  playwright@1.43.1:
+    dependencies:
+      playwright-core: 1.43.1
+    optionalDependencies:
+      fsevents: 2.3.2
 
   ssf@0.11.2:
     dependencies:
