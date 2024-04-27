@@ -29,11 +29,16 @@ function normalize(name) {
 function jaccardIndex(set1, set2) {
   const intersection = set1.filter(x => set2.includes(x)).length;
   const union = new Set([...set1, ...set2]).size;
-  return intersection / union; // Retorna la similitud de Jaccard
+  return intersection / union;
+}
+function initialsMatch(set1, set2) {
+  const initials1 = set1.map(word => word[0]);
+  const initials2 = set2.map(word => word[0]);
+  return initials1.join('') === initials2.join('');
 }
 
-// Umbral de similitud para considerar una coincidencia
 const SIMILARITY_THRESHOLD = 0.5;
+const INITIALS_MATCH_THRESHOLD = 0.4; // Umbral de similitud donde se considera la coincidencia de iniciales
 
 // Comparar y clasificar los nombres
 list_name_my_bd.forEach(fn => {
@@ -45,13 +50,14 @@ list_name_my_bd.forEach(fn => {
     const dnWords = normalize(dn.name);
     const similarityScore = jaccardIndex(fnWords, dnWords);
 
-    if (
-      similarityScore > highestScore &&
-      similarityScore >= SIMILARITY_THRESHOLD &&
-      !processedIds.has(fn.id)
-    ) {
-      highestScore = similarityScore;
-      bestMatch = { ...fn, fullName: dn.name };
+    if (similarityScore > highestScore && !processedIds.has(fn.id)) {
+      if (
+        similarityScore >= SIMILARITY_THRESHOLD ||
+        (similarityScore >= INITIALS_MATCH_THRESHOLD && initialsMatch(fnWords, dnWords))
+      ) {
+        highestScore = similarityScore;
+        bestMatch = { ...fn, fullName: dn.name };
+      }
     }
   });
 
