@@ -17,7 +17,7 @@ const getInitials = name => {
 };
 
 const nsemestreNames = listNuevoSemestre.map(item => cleanName(item.name));
-const oursNames = listOurNames.map(item => cleanName(item.name));
+const oursNames = listOurNames.map(item => ({ ...item, cleanedName: cleanName(item.name) }));
 
 const compareInitials = (ourName, semestreName) => {
   const initialsOurName = getInitials(ourName);
@@ -37,23 +37,23 @@ const compareInitials = (ourName, semestreName) => {
 const matches = [];
 const prevMatches = new Set();
 
-oursNames.forEach(ourName => {
+oursNames.forEach(ourObj => {
   let maxPoints = 0;
   let bestMatch = null;
 
-  nsemestreNames.forEach(semestreName => {
+  nsemestreNames.forEach((semestreName, index) => {
     if (!prevMatches.has(semestreName)) {
-      const initialsPoints = compareInitials(ourName, semestreName);
+      const initialsPoints = compareInitials(ourObj.cleanedName, semestreName);
 
-      if (ourName.toLowerCase() === semestreName.toLowerCase()) {
-        bestMatch = { our: ourName, semestre: semestreName };
+      if (ourObj.name.toLowerCase() === semestreName.toLowerCase()) {
+        bestMatch = { ...ourObj, nameInSemestre: listNuevoSemestre[index].name };
         prevMatches.add(semestreName);
         return;
       }
 
       if (initialsPoints > maxPoints) {
         maxPoints = initialsPoints;
-        bestMatch = { our: ourName, semestre: semestreName };
+        bestMatch = { ...ourObj, nameInSemestre: listNuevoSemestre[index].name };
       }
     }
   });
@@ -61,12 +61,22 @@ oursNames.forEach(ourName => {
   if (bestMatch) {
     matches.push(bestMatch);
     prevMatches.add(bestMatch.semestre);
+  } else {
+    unmatched.push(ourObj);
   }
 });
 
-fs.writeFile('./names.json', JSON.stringify(matches, null, 2), err => {
+fs.writeFile('./matcheds.json', JSON.stringify(matches, null, 2), err => {
   if (err) console.error('Error writing file:', err);
 });
+
+fs.writeFile('./unmatched.json', JSON.stringify(unmatched, null, 2), err => {
+  if (err) console.error('Error writing file:', err);
+});
+
+console.log(`Matches: ${matches.length}`);
+console.log(`Unmatched: ${unmatched.length}`);
+console.timeEnd('Tiempo de ejecución');
 
 // Arrays para almacenar los resultados
 //const matched = [];
@@ -135,5 +145,3 @@ fs.writeFile('./names.json', JSON.stringify(matches, null, 2), err => {
 //// Guardar los resultados en archivos
 //await fs.writeFile('matched.json', JSON.stringify(matched, null, 2));
 //await fs.writeFile('unmatched.json', JSON.stringify(unmatched, null, 2));
-
-console.timeEnd('Tiempo de ejecución');
