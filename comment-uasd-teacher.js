@@ -40,11 +40,10 @@ const processSingleTeacher = async (browser, teacher, allComments, notAvailable)
   await page.goto('https://www.nuevosemestre.com/');
   console.log('\x1b[32m%s\x1b[0m', `Processing ${teacher.name}`);
 
-  const cleanName = formatTeacherName(teacher.name);
-  await page.fill('input[name="query"]', cleanName);
+  await page.fill('input[name="query"]', teacher.matchedName);
   await Promise.all([
-    page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 }),
-    page.click('button[type="submit"]')
+    page.click('button[type="submit"]'),
+    page.waitForNavigation({ waitUntil: 'networkidle' })
   ]);
 
   const noOpinionsAvailable = await page.$(
@@ -66,13 +65,6 @@ const saveData = async (comments, notAvailable) => {
   await fs.writeFile('comments-uasd-teachers2.json', JSON.stringify(comments, null, 2));
   await fs.writeFile('not-available-teachers.json', JSON.stringify(notAvailable, null, 2));
 };
-
-const formatTeacherName = name =>
-  name
-    .trim()
-    .split(/\s+/)
-    .filter(word => word.length > 2)
-    .join(' ');
 
 const extractComments = async page => {
   return page.$$eval('div[x-data="{ reply_box_is_visible: false }"]', comments =>
