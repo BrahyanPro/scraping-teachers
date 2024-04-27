@@ -35,6 +35,7 @@ const compareInitials = (ourName, semestreName) => {
 };
 
 const matches = [];
+const unmatched = [];
 const prevMatches = new Set();
 
 oursNames.forEach(ourObj => {
