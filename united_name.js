@@ -11,8 +11,9 @@ const unmatched = [];
 // Función para normalizar los nombres y mejorar la comparación
 function normalize(name) {
   return name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .replace(/\b[A-Z]\b/g, '') // Elimina iniciales sueltas
-    .replace(/\s+/g, ' ') // Reduce múltiples espacios a uno solo
     .replace(/\s+/g, ' ') // Reduce múltiples espacios a uno solo
     .trim() // Elimina espacios en los extremos
     .toLowerCase() // Convierte a minúsculas para uniformidad
@@ -28,7 +29,7 @@ function isSubset(subset, set) {
 // Comparar y clasificar los nombres
 list_nuevo_semestre.forEach(fn => {
   const fnWords = normalize(fn.name);
-  const match = detailedNames.find(dn => {
+  const match = list_name_my_bd.find(dn => {
     const dnWords = normalize(dn.name);
     return isSubset(fnWords, dnWords) || isSubset(dnWords, fnWords);
   });
