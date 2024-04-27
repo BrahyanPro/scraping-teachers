@@ -34,28 +34,31 @@ const compareInitials = (ourName, semestreName) => {
   return points;
 };
 
+const compareNames = (name1, name2) => {
+  const name1Words = cleanName(name1).toLowerCase().split(' ');
+  const name2Words = cleanName(name2).toLowerCase().split(' ');
+
+  const commonWords = name1Words.filter(word => name2Words.includes(word)).length;
+  const totalWords = new Set([...name1Words, ...name2Words]).size;
+  return commonWords / totalWords; // Jaccard index for word similarity
+};
+
 const matches = [];
 const unmatched = [];
 const prevMatches = new Set();
 
 oursNames.forEach(ourObj => {
   let maxPoints = 0;
+  let highestScore = 0;
   let bestMatch = null;
 
-  nsemestreNames.forEach((semestreName, index) => {
-    if (!prevMatches.has(semestreName)) {
-      const initialsPoints = compareInitials(ourObj.cleanedName, semestreName);
+  listNuevoSemestre.forEach(semestreObj => {
+    const similarityScore = compareNames(ourObj.name, semestreObj.name);
 
-      if (ourObj.name.toLowerCase() === semestreName.toLowerCase()) {
-        bestMatch = { ...ourObj, nameInSemestre: listNuevoSemestre[index].name };
-        prevMatches.add(semestreName);
-        return;
-      }
-
-      if (initialsPoints > maxPoints) {
-        maxPoints = initialsPoints;
-        bestMatch = { ...ourObj, nameInSemestre: listNuevoSemestre[index].name };
-      }
+    // Utilize a more stringent threshold to prevent incorrect matches
+    if (similarityScore > highestScore && similarityScore > 0.5) {
+      highestScore = similarityScore;
+      bestMatch = { ...ourObj, matchedName: semestreObj.name };
     }
   });
 
