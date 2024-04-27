@@ -2,32 +2,41 @@ import { chromium } from 'playwright';
 import fs from 'fs/promises';
 import teacherData from './not-available-teachers.json' assert { type: 'json' };
 
-const MAX_CONCURRENT_PAGES = 8; // Número máximo de páginas/navegadores abiertos simultáneamente.
+const MAX_CONCURRENT_BROWSERS = 3; // Número máximo de navegadores.
+const TABS_PER_BROWSER = 5; // Pestañas por navegador.
 
 const processTeacherData = async () => {
-  const browser = await chromium.launch({ headless: true }); // Lanza el navegador en modo headless.
-  console.time('ProcessingTime'); // Inicia el temporizador para el proceso completo.
+  console.time('ProcessingTime');
+
+  // Crea un pool de navegadores.
+  const browsers = await Promise.all(
+    new Array(MAX_CONCURRENT_BROWSERS).fill(null).map(() => chromium.launch({ headless: true }))
+  );
+  //const browser = await chromium.launch({ headless: true }); // Lanza el navegador en modo headless.
+  //console.time('ProcessingTime'); // Inicia el temporizador para el proceso completo.
 
   const allComments = [];
   const notAvailable = [];
 
-  // Divide el trabajo en bloques de tamaño MAX_CONCURRENT_PAGES.
+  // Divide los datos de profesores en bloques según el número total de pestañas disponibles.
+  const totalTabs = MAX_CONCURRENT_BROWSERS * TABS_PER_BROWSER;
   const chunks = [];
-  for (let i = 0; i < teacherData.length; i += MAX_CONCURRENT_PAGES) {
-    chunks.push(teacherData.slice(i, i + MAX_CONCURRENT_PAGES));
+  for (let i = 0; i < teacherData.length; i += totalTabs) {
+    chunks.push(teacherData.slice(i, i + totalTabs));
   }
 
   // Procesa cada bloque en serie, pero procesa a los profesores de cada bloque en paralelo.
   for (const chunk of chunks) {
-    const promises = chunk.map(teacher =>
-      processSingleTeacher(browser, teacher, allComments, notAvailable)
-    );
+    const promises = chunk.map((teacher, index) => {
+      const browserIndex = Math.floor(index / TABS_PER_BROWSER);
+      return processSingleTeacher(browsers[browserIndex], teacher, allComments, notAvailable);
+    });
     await Promise.all(promises);
   }
 
-  await saveData(allComments, notAvailable); // Guarda todos los comentarios en un archivo JSON.
-  await browser.close(); // Cierra el navegador al finalizar todas las operaciones.
-  console.timeEnd('ProcessingTime'); // Termina la medición del tiempo de proceso.
+  await saveData(allComments, notAvailable);
+  await Promise.all(browsers.map(browser => browser.close())); // Cierra todos los navegadores.
+  console.timeEnd('ProcessingTime');
 };
 
 //  //const page = await browser.newPage(); // Abre una nueva página.
@@ -98,9 +107,9 @@ const processTeacherData = async () => {
 //};
 
 const processSingleTeacher = async (browser, teacher, allComments, notAvailable) => {
-  const page = await browser.newPage(); // Abre una nueva página por cada profesor.
+  const page = await browser.newPage();
   await page.goto('https://www.nuevosemestre.com/');
-  console.log('\x1b[32m%s\x1b[0m', `%c Processing ${teacher.name}`);
+  console.log('\x1b[32m%s\x1b[0m', `Processing ${teacher.name}`);
 
   const cleanName = formatTeacherName(teacher.name);
   await page.fill('input[name="query"]', cleanName);
@@ -118,10 +127,9 @@ const processSingleTeacher = async (browser, teacher, allComments, notAvailable)
     return;
   }
 
-  // Extrae comentarios y maneja la paginación aquí.
   const teacherData = { name: teacher.name, id: teacher.id, comments: await extractComments(page) };
   allComments.push(teacherData);
-  await page.close(); // Cierra la página después de procesar a cada profesor.
+  await page.close();
 };
 
 const saveData = async (comments, notAvailable) => {
@@ -130,19 +138,20 @@ const saveData = async (comments, notAvailable) => {
   await fs.writeFile('not-available-teachers.json', JSON.stringify(notAvailable, null, 2));
 };
 
-const formatTeacherName = name => {
-  let words = name.trim().split(/\s+/);
-  return words.filter(word => word.length > 2).join(' '); // Filtra palabras demasiado cortas.
-};
+const formatTeacherName = name =>
+  name
+    .trim()
+    .split(/\s+/)
+    .filter(word => word.length > 2)
+    .join(' ');
 
 const extractComments = async page => {
   return page.$$eval('div[x-data="{ reply_box_is_visible: false }"]', comments =>
-    comments.map(comment => {
-      const username = comment.querySelector('p').textContent;
-      const period = comment.querySelector('p.text-sm').textContent;
-      const content = comment.querySelector('p.bg-neutral-300').textContent;
-      return { username, period, content };
-    })
+    comments.map(comment => ({
+      username: comment.querySelector('p').textContent,
+      period: comment.querySelector('p.text-sm').textContent,
+      content: comment.querySelector('p.bg-neutral-300').textContent
+    }))
   );
 };
 
