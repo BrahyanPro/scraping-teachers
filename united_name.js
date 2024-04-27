@@ -10,7 +10,11 @@ const unmatched = [];
 
 // Función para normalizar los nombres y mejorar la comparación
 function normalize(name) {
-  return name.replace(/\s+/g, ' ').trim().toLowerCase();
+  return name
+    .replace(/\b[A-Z]\b/g, '') // Elimina iniciales sueltas
+    .replace(/\s+/g, ' ') // Reduce múltiples espacios a uno solo
+    .trim() // Elimina espacios en los extremos
+    .toLowerCase(); // Convierte a minúsculas para uniformidad
 }
 
 // Comparar y clasificar los nombres
