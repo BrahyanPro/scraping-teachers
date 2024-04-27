@@ -7,6 +7,7 @@ console.time('Tiempo de ejecución');
 // Arrays para almacenar los resultados
 const matched = [];
 const unmatched = [];
+const processedIds = new Set(); // Conjunto para almacenar los IDs de los elementos procesados
 
 // Función para normalizar los nombres y mejorar la comparación
 function normalize(name) {
@@ -31,11 +32,12 @@ list_nuevo_semestre.forEach(fn => {
   const fnWords = normalize(fn.name);
   const match = list_name_my_bd.find(dn => {
     const dnWords = normalize(dn.name);
-    return isSubset(fnWords, dnWords) || isSubset(dnWords, fnWords);
+    return (isSubset(fnWords, dnWords) || isSubset(dnWords, fnWords)) && !processedIds.has(dn.id);
   });
 
   if (match) {
     matched.push({ ...match, fullName: fn.name });
+    processedIds.add(match.id); // Marca este ID como procesado
   } else {
     unmatched.push(fn);
   }
