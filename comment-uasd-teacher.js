@@ -62,8 +62,8 @@ const processSingleTeacher = async (browser, teacher, allComments, notAvailable)
 
 const saveData = async (comments, notAvailable) => {
   console.log('Saving data...');
-  await fs.writeFile('comments-uasd-teachers2.json', JSON.stringify(comments, null, 2));
-  await fs.writeFile('not-available-teachers.json', JSON.stringify(notAvailable, null, 2));
+  await fs.writeFile('comments-uasd-teachers-v2.json', JSON.stringify(comments, null, 2));
+  await fs.writeFile('not-comments-available-teachers-v2.json', JSON.stringify(notAvailable, null, 2));
 };
 
 const extractComments = async page => {
