@@ -29,10 +29,6 @@ list_nuevo_semestre.forEach(fn => {
   }
 });
 
-// Mostrar los resultados
-console.log('Matched:', matched);
-console.log('Unmatched:', unmatched);
-
 // Guardar los resultados en archivos
 await fs.writeFile('matched.json', JSON.stringify(matched, null, 2));
 await fs.writeFile('unmatched.json', JSON.stringify(unmatched, null, 2));
