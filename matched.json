@@ -2116,6 +2116,24 @@
     "fullName": "Berlina Evangelista Henriquez Liria"
   },
   {
+    "id": 321,
+    "gender": "M",
+    "name": "Manuel R  Castano De Js",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 38474,
+    "sueldo_bruto": 220763,
+    "otros_ingresos": 18300,
+    "total_ingresos": 239063,
+    "isr": 41004.04,
+    "afp": 6335.9,
+    "sfs": 4742.4,
+    "otros_descuentos": 82918.17,
+    "descuento_total": 135000.51,
+    "sueldo_total_neto": 104062.49,
+    "fullName": "Manuel Ramon Castaño De Jesus"
+  },
+  {
     "id": 322,
     "gender": "F",
     "name": "Oldra Gisel  Sarante",
@@ -2757,6 +2775,25 @@
     "descuento_total": 123648.88,
     "sueldo_total_neto": 111166.28,
     "fullName": "María Magdalena Soto Gálvez"
+  },
+  {
+    "id": 432,
+    "gender": "F",
+    "name": "Rosina Del C  Taveras M",
+    "area": "ESCUELA DE INGENIERIA AGRONOMICA",
+    "role": "Analista de Investigación Agropecuaria",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 33976,
+    "sueldo_bruto": 204409.71,
+    "otros_ingresos": 18300,
+    "total_ingresos": 222709.71,
+    "isr": 37033.05,
+    "afp": 5866.56,
+    "sfs": 4742.4,
+    "otros_descuentos": 1225,
+    "descuento_total": 48867.01,
+    "sueldo_total_neto": 173842.7,
+    "fullName": "Rosina Del Carmen Taveras Macarrulla"
   },
   {
     "id": 433,
@@ -7252,6 +7289,24 @@
     "fullName": "Lamec Antonio Fabian Vasquez"
   },
   {
+    "id": 1051,
+    "gender": "F",
+    "name": "Ernestina Del C  Florentino Valdez",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 35522,
+    "sueldo_bruto": 173634.63,
+    "otros_ingresos": 0,
+    "total_ingresos": 173634.63,
+    "isr": 29560.1,
+    "afp": 4983.31,
+    "sfs": 4742.4,
+    "otros_descuentos": 23830.42,
+    "descuento_total": 63116.23,
+    "sueldo_total_neto": 110518.4,
+    "fullName": "Ernestina Del Carmen Florencio Valdez"
+  },
+  {
     "id": 1055,
     "gender": "M",
     "name": "Sandy Reynaldo  Portorreal Garcia",
@@ -10810,6 +10865,24 @@
     "descuento_total": 91251.52,
     "sueldo_total_neto": 102073.48,
     "fullName": "Sixto Manuel Hernandez De Los Santos"
+  },
+  {
+    "id": 1487,
+    "gender": "M",
+    "name": "Cecilio  De Los S Gonzalez",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39326,
+    "sueldo_bruto": 161825,
+    "otros_ingresos": 32550,
+    "total_ingresos": 194375,
+    "isr": 26692.42,
+    "afp": 4644.38,
+    "sfs": 4742.4,
+    "otros_descuentos": 44020.66,
+    "descuento_total": 80099.86,
+    "sueldo_total_neto": 114275.14,
+    "fullName": "Gladys Cedeño De Los S"
   },
   {
     "id": 1489,
@@ -16736,6 +16809,25 @@
     "descuento_total": 27608.35,
     "sueldo_total_neto": 125030.63,
     "fullName": "Manuel De Jesus Sosa Abreu"
+  },
+  {
+    "id": 2119,
+    "gender": "F",
+    "name": "Alexandra A Custodio A",
+    "area": "ESCUELA DE ADMINISTRACION",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 41659,
+    "sueldo_bruto": 131332.49,
+    "otros_ingresos": 0,
+    "total_ingresos": 131332.49,
+    "isr": 19475.55,
+    "afp": 3769.24,
+    "sfs": 3992.51,
+    "otros_descuentos": 12456.49,
+    "descuento_total": 39693.79,
+    "sueldo_total_neto": 91638.7,
+    "fullName": "Alexandra Altagracia Custodio Arias"
   },
   {
     "id": 2120,
