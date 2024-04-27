@@ -4,40 +4,57 @@ import fs from 'fs/promises';
 
 console.log('Inicio de la comparación de nombres...');
 console.time('Tiempo de ejecución');
+
 // Arrays para almacenar los resultados
 const matched = [];
 const unmatched = [];
-const processedIds = new Set(); // Conjunto para almacenar los IDs de los elementos procesados
+const processedIds = new Set();
 
-// Función para normalizar los nombres y mejorar la comparación
+// Función para eliminar diacríticos y normalizar los nombres
 function normalize(name) {
   return name
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-    .replace(/\b[A-Z]\b/g, '') // Elimina iniciales sueltas
-    .replace(/\s+/g, ' ') // Reduce múltiples espacios a uno solo
-    .trim() // Elimina espacios en los extremos
-    .toLowerCase() // Convierte a minúsculas para uniformidad
-    .split(' ') // Divide el nombre en palabras
-    .sort(); // Ordena las palabras para comparación consistent
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
+    .split(' ')
+    .sort();
 }
 
-// Función para determinar si todos los elementos de 'subset' están en 'set'
-function isSubset(subset, set) {
-  return subset.every(element => set.includes(element));
+// Función para calcular la similitud de Jaccard entre dos conjuntos de palabras
+function jaccardIndex(set1, set2) {
+  const intersection = set1.filter(x => set2.includes(x)).length;
+  const union = new Set([...set1, ...set2]).size;
+  return intersection / union; // Retorna la similitud de Jaccard
 }
+
+// Umbral de similitud para considerar una coincidencia
+const SIMILARITY_THRESHOLD = 0.5;
 
 // Comparar y clasificar los nombres
 list_nuevo_semestre.forEach(fn => {
   const fnWords = normalize(fn.name);
-  const match = list_name_my_bd.find(dn => {
+  let bestMatch = null;
+  let highestScore = 0;
+
+  list_name_my_bd.forEach(dn => {
     const dnWords = normalize(dn.name);
-    return (isSubset(fnWords, dnWords) || isSubset(dnWords, fnWords)) && !processedIds.has(dn.id);
+    const similarityScore = jaccardIndex(fnWords, dnWords);
+
+    if (
+      similarityScore > highestScore &&
+      similarityScore >= SIMILARITY_THRESHOLD &&
+      !processedIds.has(dn.id)
+    ) {
+      highestScore = similarityScore;
+      bestMatch = { ...dn, fullName: fn.name };
+    }
   });
 
-  if (match) {
-    matched.push({ ...match, fullName: fn.name });
-    processedIds.add(match.id); // Marca este ID como procesado
+  if (bestMatch) {
+    matched.push(bestMatch);
+    processedIds.add(bestMatch.id);
   } else {
     unmatched.push(fn);
   }
