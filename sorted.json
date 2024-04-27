@@ -93,6 +93,25 @@
     "fullName": "Wilson Mejia Mejia"
   },
   {
+    "id": 6,
+    "gender": "F",
+    "name": "Elizabeth O  Saldaña N",
+    "area": "ESCUELA DE MERCADEO",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 35773,
+    "sueldo_bruto": 319912.86,
+    "otros_ingresos": 0,
+    "total_ingresos": 319912.86,
+    "isr": 65136.88,
+    "afp": 8954.4,
+    "sfs": 4742.4,
+    "otros_descuentos": 119260.05,
+    "descuento_total": 198093.73,
+    "sueldo_total_neto": 121819.13,
+    "fullName": "Elizabeth Orfelina Saldana Nieves"
+  },
+  {
     "id": 7,
     "gender": "M",
     "name": "Francisco Jose  Terrero Galarza",
@@ -738,7 +757,7 @@
     "otros_descuentos": 124185.36,
     "descuento_total": 192983.22,
     "sueldo_total_neto": 89341.37,
-    "fullName": "Noris De La Cruz De La Cruz"
+    "fullName": "Arlene Gonzalez De La Cruz"
   },
   {
     "id": 43,
@@ -1779,7 +1798,7 @@
     "otros_descuentos": 59451.3,
     "descuento_total": 123482.1,
     "sueldo_total_neto": 175455.9,
-    "fullName": "Ramon Lopez Inoa"
+    "fullName": "Ramon Peña Lopez"
   },
   {
     "id": 100,
@@ -2350,7 +2369,7 @@
     "otros_descuentos": 25825,
     "descuento_total": 87961.37,
     "sueldo_total_neto": 169829.64,
-    "fullName": "Kircy De La Cruz Carela"
+    "fullName": "Serafino De La Cruz A"
   },
   {
     "id": 131,
@@ -2368,7 +2387,7 @@
     "otros_descuentos": 34519.97,
     "descuento_total": 96656.34,
     "sueldo_total_neto": 191434.66,
-    "fullName": "Luis Erasmo Contreras Martinez"
+    "fullName": "Luis Casado Martinez"
   },
   {
     "id": 132,
@@ -3476,6 +3495,24 @@
     "descuento_total": 110550.6,
     "sueldo_total_neto": 135981.44,
     "fullName": "Teofilo Almonte Perez"
+  },
+  {
+    "id": 194,
+    "gender": "M",
+    "name": "Felix M  Angomas R",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 38573,
+    "sueldo_bruto": 246491.7,
+    "otros_ingresos": 44471.36,
+    "total_ingresos": 290963.06,
+    "isr": 47251.61,
+    "afp": 7074.31,
+    "sfs": 4742.4,
+    "otros_descuentos": 210580.88,
+    "descuento_total": 269649.2,
+    "sueldo_total_neto": 21313.86,
+    "fullName": "Felix Manuel Angomas Ramirez"
   },
   {
     "id": 195,
@@ -4706,7 +4743,7 @@
     "otros_descuentos": 46743.19,
     "descuento_total": 101060.66,
     "sueldo_total_neto": 127934.12,
-    "fullName": "Felix Antonio Diaz Hernandez"
+    "fullName": "Ramon Felix Hernandez"
   },
   {
     "id": 264,
@@ -4762,25 +4799,6 @@
     "descuento_total": 94880.62,
     "sueldo_total_neto": 133903.52,
     "fullName": "Francisco Alberto Garcés Franco"
-  },
-  {
-    "id": 267,
-    "gender": "F",
-    "name": "Jose  Selig R",
-    "area": "ESCUELA DE CIENCIAS MORFOLOGICAS",
-    "role": "50% CARGA DOCENTE (DOC INV Y E",
-    "status": "CONTRATADO",
-    "fecha_ingreso": 29598,
-    "sueldo_bruto": 228462.24,
-    "otros_ingresos": 0,
-    "total_ingresos": 228462.24,
-    "isr": 42873.61,
-    "afp": 6556.87,
-    "sfs": 4742.4,
-    "otros_descuentos": 1125,
-    "descuento_total": 55297.88,
-    "sueldo_total_neto": 173164.36,
-    "fullName": "Jose Hernandez R"
   },
   {
     "id": 268,
@@ -5370,7 +5388,7 @@
     "otros_descuentos": 74252.32,
     "descuento_total": 126986.24,
     "sueldo_total_neto": 96176.48,
-    "fullName": "María Evelin Galicia Hernández"
+    "fullName": "Maria Hernandez Pimentel"
   },
   {
     "id": 300,
@@ -5683,6 +5701,25 @@
     "fullName": "Servio Quevedo Rosario"
   },
   {
+    "id": 317,
+    "gender": "M",
+    "name": "MIGUEL NASSIM KHOURY RAMIREZ",
+    "area": "ESCUELA DE INGENIERIA INDUSTRIAL",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 36284,
+    "sueldo_bruto": 221266.38,
+    "otros_ingresos": 0,
+    "total_ingresos": 221266.38,
+    "isr": 41126.28,
+    "afp": 6350.35,
+    "sfs": 4742.4,
+    "otros_descuentos": 9730.14,
+    "descuento_total": 61949.17,
+    "sueldo_total_neto": 159317.21,
+    "fullName": "Miguel Khoury R"
+  },
+  {
     "id": 318,
     "gender": "F",
     "name": "Argentina A  Figueroa Espinosa",
@@ -5737,6 +5774,24 @@
     "descuento_total": 157496.04,
     "sueldo_total_neto": 82286.96,
     "fullName": "Berlina Evangelista Henriquez Liria"
+  },
+  {
+    "id": 321,
+    "gender": "M",
+    "name": "Manuel R  Castano De Js",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 38474,
+    "sueldo_bruto": 220763,
+    "otros_ingresos": 18300,
+    "total_ingresos": 239063,
+    "isr": 41004.04,
+    "afp": 6335.9,
+    "sfs": 4742.4,
+    "otros_descuentos": 82918.17,
+    "descuento_total": 135000.51,
+    "sueldo_total_neto": 104062.49,
+    "fullName": "Manuel Ramon Castaño De Jesus"
   },
   {
     "id": 322,
@@ -6380,6 +6435,24 @@
     "fullName": "Juan Olivero Figuereo"
   },
   {
+    "id": 358,
+    "gender": "F",
+    "name": "Judith M  Martinez A",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 39326,
+    "sueldo_bruto": 215534.27,
+    "otros_ingresos": 47393.84,
+    "total_ingresos": 262928.11,
+    "isr": 39734.38,
+    "afp": 6185.83,
+    "sfs": 4742.4,
+    "otros_descuentos": 20228.6,
+    "descuento_total": 70891.21,
+    "sueldo_total_neto": 192036.9,
+    "fullName": "Digna Martinez Martinez"
+  },
+  {
     "id": 359,
     "gender": "F",
     "name": "Clariza Margarita  Portes Rosario",
@@ -6655,6 +6728,25 @@
     "fullName": "Yuderca Lerebours Mateo"
   },
   {
+    "id": 374,
+    "gender": "M",
+    "name": "Leonidas A  Terrero J",
+    "area": "UASD- SAN JUAN",
+    "role": "Bedel",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 35419,
+    "sueldo_bruto": 212317.3,
+    "otros_ingresos": 0,
+    "total_ingresos": 212317.3,
+    "isr": 38953.21,
+    "afp": 6093.51,
+    "sfs": 4742.4,
+    "otros_descuentos": 42653.27,
+    "descuento_total": 92442.39,
+    "sueldo_total_neto": 119874.91,
+    "fullName": "Leonidas Alexander Terrero Jimenez"
+  },
+  {
     "id": 375,
     "gender": "F",
     "name": "Leonor  Taveras Mateo",
@@ -6706,7 +6798,7 @@
     "otros_descuentos": 44867.79,
     "descuento_total": 94538.99,
     "sueldo_total_neto": 152084.01,
-    "fullName": "Juan Peña M"
+    "fullName": "Juan Romero Peña"
   },
   {
     "id": 378,
@@ -7350,6 +7442,25 @@
     "fullName": "Carmen Yahaira Gomez Perdomo"
   },
   {
+    "id": 414,
+    "gender": "M",
+    "name": "Domingo  Guerrero C",
+    "area": "ESCUELA DE CIENCIAS MORFOLOGICAS",
+    "role": "Profesor",
+    "status": "CONTRATADO",
+    "fecha_ingreso": 39692,
+    "sueldo_bruto": 206519.47,
+    "otros_ingresos": 0,
+    "total_ingresos": 206519.47,
+    "isr": 37545.36,
+    "afp": 5927.11,
+    "sfs": 4742.4,
+    "otros_descuentos": 41028.37,
+    "descuento_total": 89243.24,
+    "sueldo_total_neto": 117276.23,
+    "fullName": "Domingo Antonio Guerrero Calderón"
+  },
+  {
     "id": 415,
     "gender": "M",
     "name": "Juan Manuel Medina Acosta",
@@ -7643,7 +7754,7 @@
     "otros_descuentos": 47444.38,
     "descuento_total": 95190.47,
     "sueldo_total_neto": 127902.53,
-    "fullName": "Alfonso Morillo De Los Santos"
+    "fullName": "William De Los Santos G"
   },
   {
     "id": 431,
@@ -7662,6 +7773,25 @@
     "descuento_total": 123648.88,
     "sueldo_total_neto": 111166.28,
     "fullName": "María Magdalena Soto Gálvez"
+  },
+  {
+    "id": 432,
+    "gender": "F",
+    "name": "Rosina Del C  Taveras M",
+    "area": "ESCUELA DE INGENIERIA AGRONOMICA",
+    "role": "Analista de Investigación Agropecuaria",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 33976,
+    "sueldo_bruto": 204409.71,
+    "otros_ingresos": 18300,
+    "total_ingresos": 222709.71,
+    "isr": 37033.05,
+    "afp": 5866.56,
+    "sfs": 4742.4,
+    "otros_descuentos": 1225,
+    "descuento_total": 48867.01,
+    "sueldo_total_neto": 173842.7,
+    "fullName": "Rosina Del Carmen Taveras Macarrulla"
   },
   {
     "id": 433,
@@ -7734,6 +7864,24 @@
     "descuento_total": 49540.25,
     "sueldo_total_neto": 190886.75,
     "fullName": "Nancy Soto Baez"
+  },
+  {
+    "id": 437,
+    "gender": "M",
+    "name": "Jose L  Soto T",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 39480,
+    "sueldo_bruto": 204104.29,
+    "otros_ingresos": 0,
+    "total_ingresos": 204104.29,
+    "isr": 36958.89,
+    "afp": 5857.79,
+    "sfs": 4742.4,
+    "otros_descuentos": 325,
+    "descuento_total": 47884.08,
+    "sueldo_total_neto": 156220.21,
+    "fullName": "Jose Luis Soto Trinidad"
   },
   {
     "id": 438,
@@ -7882,6 +8030,24 @@
     "fullName": "Clarisa Herrera Cuello"
   },
   {
+    "id": 446,
+    "gender": "F",
+    "name": "Walkiris  Mejia O",
+    "role": "Traductor Intercambios Académicos",
+    "status": "INTERINO",
+    "fecha_ingreso": 39548,
+    "sueldo_bruto": 202929.3,
+    "otros_ingresos": 35057.5,
+    "total_ingresos": 237986.8,
+    "isr": 36673.57,
+    "afp": 5824.07,
+    "sfs": 4742.4,
+    "otros_descuentos": 87555.42,
+    "descuento_total": 134795.46,
+    "sueldo_total_neto": 103191.34,
+    "fullName": "Walkiris Vanessa Mejia Ortega"
+  },
+  {
     "id": 447,
     "gender": "M",
     "name": "Ernesto Enrique  Leroux Peguero",
@@ -7934,7 +8100,7 @@
     "otros_descuentos": 122323.64,
     "descuento_total": 169535.9,
     "sueldo_total_neto": 33291.1,
-    "fullName": "Nancy Feliz Cuevas"
+    "fullName": "Julio Cuevas Cuevas"
   },
   {
     "id": 450,
@@ -8139,7 +8305,7 @@
     "otros_descuentos": 94633.7,
     "descuento_total": 141648.46,
     "sueldo_total_neto": 60451.14,
-    "fullName": "Milton Martinez Gonzalez"
+    "fullName": "Maria Gonzalez Martinez"
   },
   {
     "id": 461,
@@ -8267,7 +8433,7 @@
     "otros_descuentos": 11531.12,
     "descuento_total": 58305.27,
     "sueldo_total_neto": 142908.18,
-    "fullName": "Ramon Peña Lopez"
+    "fullName": "Ramon Sencion Peña"
   },
   {
     "id": 468,
@@ -8741,7 +8907,7 @@
     "otros_descuentos": 22206.62,
     "descuento_total": 68304.8,
     "sueldo_total_neto": 130419.12,
-    "fullName": "Rafael Valdez Peralta"
+    "fullName": "Rafael Schiffino Peralta"
   },
   {
     "id": 495,
@@ -10788,7 +10954,7 @@
     "otros_descuentos": 5230.14,
     "descuento_total": 48675.81,
     "sueldo_total_neto": 155999.19,
-    "fullName": "Helenn Carolina De La Cruz Florian"
+    "fullName": "Rafaela De La Cruz G"
   },
   {
     "id": 611,
@@ -11022,7 +11188,7 @@
     "otros_descuentos": 127829.07,
     "descuento_total": 171111.95,
     "sueldo_total_neto": 46193.51,
-    "fullName": "Vilma Martinez A"
+    "fullName": "Isaias Martinez A"
   },
   {
     "id": 624,
@@ -11317,7 +11483,7 @@
     "otros_descuentos": 75529.71,
     "descuento_total": 118538.06,
     "sueldo_total_neto": 68806.32,
-    "fullName": "Maria Magdalena Gonzalez Gonzalez"
+    "fullName": "Maria Lopez Gonzalez"
   },
   {
     "id": 641,
@@ -11465,7 +11631,7 @@
     "otros_descuentos": 10875,
     "descuento_total": 53778.59,
     "sueldo_total_neto": 133179.96,
-    "fullName": "Juan De La Cruz"
+    "fullName": "Dominga De La Cruz"
   },
   {
     "id": 649,
@@ -12417,7 +12583,7 @@
     "otros_descuentos": 6575,
     "descuento_total": 48710.42,
     "sueldo_total_neto": 157589.03,
-    "fullName": "Ana Mercedes Perez S"
+    "fullName": "Ana Escalante Perez"
   },
   {
     "id": 702,
@@ -12436,6 +12602,24 @@
     "descuento_total": 141859.52,
     "sueldo_total_neto": 62926.29,
     "fullName": "Altagracia Suero"
+  },
+  {
+    "id": 703,
+    "gender": "M",
+    "name": "Victor L  Soto E",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 33147,
+    "sueldo_bruto": 183985,
+    "otros_ingresos": 12900,
+    "total_ingresos": 196885,
+    "isr": 32073.42,
+    "afp": 5280.37,
+    "sfs": 4742.4,
+    "otros_descuentos": 86712.31,
+    "descuento_total": 128808.5,
+    "sueldo_total_neto": 68076.5,
+    "fullName": "Victor Lorenzo Soto Encarnacion"
   },
   {
     "id": 704,
@@ -13091,7 +13275,7 @@
     "otros_descuentos": 123361.99,
     "descuento_total": 165078.88,
     "sueldo_total_neto": 17509.16,
-    "fullName": "Carmen Perez Feliz"
+    "fullName": "Victor Feliz Perez"
   },
   {
     "id": 741,
@@ -13566,7 +13750,7 @@
     "otros_descuentos": 13975,
     "descuento_total": 57565.88,
     "sueldo_total_neto": 132839.12,
-    "fullName": "Pablo Encarnacion De la Rosa"
+    "fullName": "Jose Encarnacion De La C"
   },
   {
     "id": 767,
@@ -13603,6 +13787,24 @@
     "descuento_total": 98080.55,
     "sueldo_total_neto": 83629.02,
     "fullName": "Nilsa Maria Rodriguez Batista"
+  },
+  {
+    "id": 769,
+    "gender": "F",
+    "name": "Sunilda A  Cordero M",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39845,
+    "sueldo_bruto": 181692,
+    "otros_ingresos": 22350,
+    "total_ingresos": 204042,
+    "isr": 31516.63,
+    "afp": 5214.56,
+    "sfs": 4742.4,
+    "otros_descuentos": 67490.44,
+    "descuento_total": 108964.03,
+    "sueldo_total_neto": 95077.97,
+    "fullName": "Sunilda Altagracia Cordero Morales"
   },
   {
     "id": 770,
@@ -13769,6 +13971,24 @@
     "fullName": "Francisco Alberto Espinal Gonzalez"
   },
   {
+    "id": 780,
+    "gender": "M",
+    "name": "Wilson A. Taveras G.",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 36557,
+    "sueldo_bruto": 181452.32,
+    "otros_ingresos": 25260,
+    "total_ingresos": 206712.32,
+    "isr": 31458.43,
+    "afp": 5207.68,
+    "sfs": 4742.4,
+    "otros_descuentos": 69302.02,
+    "descuento_total": 110710.53,
+    "sueldo_total_neto": 96001.79,
+    "fullName": "Wilson Taveras G"
+  },
+  {
     "id": 781,
     "gender": "M",
     "name": "Isidro  Baez Suero",
@@ -13857,7 +14077,7 @@
     "otros_descuentos": 130025.89,
     "descuento_total": 171356.65,
     "sueldo_total_neto": 9809.35,
-    "fullName": "Ana Celestino"
+    "fullName": "Ana Celestino V"
   },
   {
     "id": 786,
@@ -13966,7 +14186,7 @@
     "otros_descuentos": 27029.06,
     "descuento_total": 68284.07,
     "sueldo_total_neto": 137262.93,
-    "fullName": "Ramona Hernandez G"
+    "fullName": "Ramona Hernandez Ramirez"
   },
   {
     "id": 792,
@@ -14282,6 +14502,24 @@
     "fullName": "Mery Garcia Diaz"
   },
   {
+    "id": 809,
+    "gender": "F",
+    "name": "Adelaida Felicia  Oreste Sembileon",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 38187,
+    "sueldo_bruto": 180207.88,
+    "otros_ingresos": 0,
+    "total_ingresos": 180207.88,
+    "isr": 31156.24,
+    "afp": 5171.97,
+    "sfs": 4742.4,
+    "otros_descuentos": 43210.64,
+    "descuento_total": 84281.25,
+    "sueldo_total_neto": 95926.63,
+    "fullName": "Adelaida Oreste S"
+  },
+  {
     "id": 810,
     "gender": "M",
     "name": "Luis Rafael  Lopez Ortiz",
@@ -14497,7 +14735,7 @@
     "otros_descuentos": 37268.71,
     "descuento_total": 78254.64,
     "sueldo_total_neto": 101641.36,
-    "fullName": "Mercedes Baez Ana"
+    "fullName": "Ana Mercedes Perez S"
   },
   {
     "id": 822,
@@ -14791,6 +15029,24 @@
     "fullName": "Eva Garcia Martinez"
   },
   {
+    "id": 838,
+    "gender": "M",
+    "name": "Rafael L. Alcantara F.",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 38992,
+    "sueldo_bruto": 179466.08,
+    "otros_ingresos": 17550,
+    "total_ingresos": 197016.08,
+    "isr": 30976.12,
+    "afp": 5150.68,
+    "sfs": 4742.4,
+    "otros_descuentos": 120500.18,
+    "descuento_total": 161369.38,
+    "sueldo_total_neto": 35646.7,
+    "fullName": "Rafael L Alcantara F"
+  },
+  {
     "id": 839,
     "gender": "M",
     "name": "Rafael Alberto  Salvador Escarraman",
@@ -14896,7 +15152,7 @@
     "otros_descuentos": 65098.16,
     "descuento_total": 105967.19,
     "sueldo_total_neto": 73498.3,
-    "fullName": "Julio Cuevas Cuevas"
+    "fullName": "Noemi Cuevas Sanchez"
   },
   {
     "id": 845,
@@ -15479,6 +15735,25 @@
     "descuento_total": 59458.05,
     "sueldo_total_neto": 119085.53,
     "fullName": "Francisco Berroa Ubiera"
+  },
+  {
+    "id": 877,
+    "gender": "F",
+    "name": "Minerva A. Cornelio C.",
+    "area": "ESCUELA DE BIONALISIS",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 39307,
+    "sueldo_bruto": 178524.35,
+    "otros_ingresos": 18238.5,
+    "total_ingresos": 196762.85,
+    "isr": 35176.41,
+    "afp": 5123.65,
+    "sfs": 4742.4,
+    "otros_descuentos": 7175,
+    "descuento_total": 52217.46,
+    "sueldo_total_neto": 144545.39,
+    "fullName": "Minerva A Cornelio Cruzeta"
   },
   {
     "id": 878,
@@ -16193,7 +16468,7 @@
     "otros_descuentos": 7205.94,
     "descuento_total": 47493.43,
     "sueldo_total_neto": 129830.28,
-    "fullName": "Rafaela De La Cruz G"
+    "fullName": "Isidro Guzman De La Cruz"
   },
   {
     "id": 920,
@@ -16230,7 +16505,7 @@
     "otros_descuentos": 43775.11,
     "descuento_total": 84027.99,
     "sueldo_total_neto": 93168.29,
-    "fullName": "Ramon Regla Olivo"
+    "fullName": "Domingo Regla Olivo"
   },
   {
     "id": 922,
@@ -16376,7 +16651,7 @@
     "otros_descuentos": 8292.29,
     "descuento_total": 48482.9,
     "sueldo_total_neto": 128484.03,
-    "fullName": "Ruth Castillo"
+    "fullName": "Ruth Castillo H"
   },
   {
     "id": 930,
@@ -17053,6 +17328,24 @@
     "fullName": "Alexandra Elizo Valerio"
   },
   {
+    "id": 967,
+    "gender": "M",
+    "name": "Dean Nabil  Reynoso Almonte",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 40413,
+    "sueldo_bruto": 176211.94,
+    "otros_ingresos": 0,
+    "total_ingresos": 176211.94,
+    "isr": 30185.93,
+    "afp": 5057.28,
+    "sfs": 4742.4,
+    "otros_descuentos": 325,
+    "descuento_total": 40310.61,
+    "sueldo_total_neto": 135901.33,
+    "fullName": "Dean Reynoso A"
+  },
+  {
     "id": 968,
     "gender": "M",
     "name": "Mariolo  Herrera",
@@ -17233,7 +17526,7 @@
     "otros_descuentos": 30521.1,
     "descuento_total": 70366.48,
     "sueldo_total_neto": 105328.99,
-    "fullName": "Serafino De La Cruz A"
+    "fullName": "Roberto Byas De La Cruz"
   },
   {
     "id": 979,
@@ -18076,6 +18369,24 @@
     "fullName": "Carmen Elizabeth Bueno Estevez"
   },
   {
+    "id": 1026,
+    "gender": "M",
+    "name": "Edward R  Martinez L",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 38586,
+    "sueldo_bruto": 174401,
+    "otros_ingresos": 0,
+    "total_ingresos": 174401,
+    "isr": 29746.19,
+    "afp": 5005.31,
+    "sfs": 4742.4,
+    "otros_descuentos": 3880.14,
+    "descuento_total": 43374.04,
+    "sueldo_total_neto": 131026.96,
+    "fullName": "Edward Rafael Martinez Lantigua"
+  },
+  {
     "id": 1027,
     "gender": "F",
     "name": "Nancy Maria  Alonzo Sanchez",
@@ -18496,6 +18807,24 @@
     "fullName": "Lamec Antonio Fabian Vasquez"
   },
   {
+    "id": 1051,
+    "gender": "F",
+    "name": "Ernestina Del C  Florentino Valdez",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 35522,
+    "sueldo_bruto": 173634.63,
+    "otros_ingresos": 0,
+    "total_ingresos": 173634.63,
+    "isr": 29560.1,
+    "afp": 4983.31,
+    "sfs": 4742.4,
+    "otros_descuentos": 23830.42,
+    "descuento_total": 63116.23,
+    "sueldo_total_neto": 110518.4,
+    "fullName": "Ernestina Del Carmen Florencio Valdez"
+  },
+  {
     "id": 1052,
     "gender": "F",
     "name": "Maria Magdalena  Guillen Sanchez",
@@ -18898,24 +19227,6 @@
     "fullName": "Reinaldo Garcia Rosario"
   },
   {
-    "id": 1075,
-    "gender": "M",
-    "name": "Isaias  Santana P",
-    "role": "Profesor",
-    "status": "DE CARRERA",
-    "fecha_ingreso": 38586,
-    "sueldo_bruto": 172913.81,
-    "otros_ingresos": 0,
-    "total_ingresos": 172913.81,
-    "isr": 29385.06,
-    "afp": 4962.63,
-    "sfs": 4742.4,
-    "otros_descuentos": 76332.77,
-    "descuento_total": 115422.86,
-    "sueldo_total_neto": 57490.95,
-    "fullName": "Isaias Santa P"
-  },
-  {
     "id": 1076,
     "gender": "M",
     "name": "Jose Ernesto  Flete Morillo",
@@ -19059,7 +19370,7 @@
     "otros_descuentos": 40736.14,
     "descuento_total": 79745.56,
     "sueldo_total_neto": 120471.15,
-    "fullName": "Jose Hernandez Salvador"
+    "fullName": "Jose Hernandez R"
   },
   {
     "id": 1084,
@@ -19206,7 +19517,7 @@
     "otros_descuentos": 45651.49,
     "descuento_total": 87861.12,
     "sueldo_total_neto": 119944.23,
-    "fullName": "Ruth Castillo H"
+    "fullName": "Ruth Castillo"
   },
   {
     "id": 1092,
@@ -19847,6 +20158,24 @@
     "fullName": "Quisqueya Victoria Mercedes Villaman"
   },
   {
+    "id": 1127,
+    "gender": "M",
+    "name": "Cristian J  Casilla B",
+    "role": "Profesor",
+    "status": "INTERINO",
+    "fecha_ingreso": 40204,
+    "sueldo_bruto": 171306.78,
+    "otros_ingresos": 13567.78,
+    "total_ingresos": 184874.56,
+    "isr": 30898.19,
+    "afp": 4916.5,
+    "sfs": 4742.4,
+    "otros_descuentos": 31218.16,
+    "descuento_total": 71775.25,
+    "sueldo_total_neto": 113099.31,
+    "fullName": "Cristian Casilla Barclay"
+  },
+  {
     "id": 1128,
     "gender": "M",
     "name": "Orlando Miguel Pierre Leonardo",
@@ -19954,6 +20283,24 @@
     "descuento_total": 102483.82,
     "sueldo_total_neto": 68761.1,
     "fullName": "Vanessa T Abreu Jimenez"
+  },
+  {
+    "id": 1135,
+    "gender": "F",
+    "name": "Maria C  Castro G",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39114,
+    "sueldo_bruto": 171244.92,
+    "otros_ingresos": 0,
+    "total_ingresos": 171244.92,
+    "isr": 28979.81,
+    "afp": 4914.73,
+    "sfs": 4742.4,
+    "otros_descuentos": 2675,
+    "descuento_total": 41311.94,
+    "sueldo_total_neto": 129932.98,
+    "fullName": "Maria Candelaria Castro Garcia"
   },
   {
     "id": 1136,
@@ -20316,7 +20663,7 @@
     "otros_descuentos": 80239.87,
     "descuento_total": 118876.56,
     "sueldo_total_neto": 52367.44,
-    "fullName": "Arlene Gonzalez De La Cruz"
+    "fullName": "Juan De La Cruz"
   },
   {
     "id": 1156,
@@ -20552,7 +20899,7 @@
     "otros_descuentos": 1325,
     "descuento_total": 39887.02,
     "sueldo_total_neto": 153581.98,
-    "fullName": "Pedro Julio Martínez"
+    "fullName": "Julio Cesar Martinez Martinez"
   },
   {
     "id": 1169,
@@ -20733,7 +21080,7 @@
     "otros_descuentos": 32165.94,
     "descuento_total": 70614.2,
     "sueldo_total_neto": 99935.8,
-    "fullName": "Juan Olivo Peña"
+    "fullName": "Juan Peña M"
   },
   {
     "id": 1179,
@@ -20969,7 +21316,7 @@
     "otros_descuentos": 78852.17,
     "descuento_total": 117217.06,
     "sueldo_total_neto": 97160.33,
-    "fullName": "Isidro Guzman De La Cruz"
+    "fullName": "Valerio De La Cruz"
   },
   {
     "id": 1192,
@@ -21097,6 +21444,24 @@
     "descuento_total": 38595.19,
     "sueldo_total_neto": 153529.01,
     "fullName": "Fausto Antonio Pozo Lopez"
+  },
+  {
+    "id": 1199,
+    "gender": "F",
+    "name": "Maria A  Mejia S",
+    "role": "Profesor",
+    "status": "INTERINO",
+    "fecha_ingreso": 39485,
+    "sueldo_bruto": 169878.21,
+    "otros_ingresos": 0,
+    "total_ingresos": 169878.21,
+    "isr": 28647.94,
+    "afp": 4875.5,
+    "sfs": 4742.4,
+    "otros_descuentos": 33769.06,
+    "descuento_total": 72034.9,
+    "sueldo_total_neto": 97843.31,
+    "fullName": "María Altagracia Mejía Sánchez"
   },
   {
     "id": 1200,
@@ -21370,6 +21735,24 @@
     "descuento_total": 43944.98,
     "sueldo_total_neto": 158153.02,
     "fullName": "Maritza Mendez Rodriguez"
+  },
+  {
+    "id": 1215,
+    "gender": "M",
+    "name": "Carlos Ant  Gomez N",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39692,
+    "sueldo_bruto": 169383,
+    "otros_ingresos": 30930,
+    "total_ingresos": 200313,
+    "isr": 28527.69,
+    "afp": 4861.29,
+    "sfs": 4742.4,
+    "otros_descuentos": 6288.7,
+    "descuento_total": 44420.08,
+    "sueldo_total_neto": 155892.92,
+    "fullName": "Keuris Gomez Gomez"
   },
   {
     "id": 1216,
@@ -21665,6 +22048,24 @@
     "fullName": "Minerva Perez Jimenez"
   },
   {
+    "id": 1232,
+    "gender": "M",
+    "name": "Ramon A  Encarnacion F",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39692,
+    "sueldo_bruto": 168848,
+    "otros_ingresos": 39030,
+    "total_ingresos": 207878,
+    "isr": 28397.78,
+    "afp": 4845.94,
+    "sfs": 4742.4,
+    "otros_descuentos": 147998.08,
+    "descuento_total": 185984.2,
+    "sueldo_total_neto": 21893.8,
+    "fullName": "Ramón Antonio Encarnación Figuereo"
+  },
+  {
     "id": 1233,
     "gender": "F",
     "name": "Esperanza  Ferreras De Beltre",
@@ -21809,7 +22210,7 @@
     "otros_descuentos": 70510.78,
     "descuento_total": 115761.25,
     "sueldo_total_neto": 118245.8,
-    "fullName": "Ramona Hernandez Ramirez"
+    "fullName": "Ramona Hernandez G"
   },
   {
     "id": 1241,
@@ -21973,6 +22374,24 @@
     "descuento_total": 41557.59,
     "sueldo_total_neto": 152867.39,
     "fullName": "Patria Josefina Soriano"
+  },
+  {
+    "id": 1250,
+    "gender": "M",
+    "name": "Luis  Santana A",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39692,
+    "sueldo_bruto": 168335.58,
+    "otros_ingresos": 0,
+    "total_ingresos": 168335.58,
+    "isr": 28273.35,
+    "afp": 4831.23,
+    "sfs": 4742.4,
+    "otros_descuentos": 325,
+    "descuento_total": 38171.98,
+    "sueldo_total_neto": 130163.6,
+    "fullName": "Luis Tomás Santana Artiles"
   },
   {
     "id": 1251,
@@ -22644,7 +23063,7 @@
     "otros_descuentos": 44944.62,
     "descuento_total": 82479.04,
     "sueldo_total_neto": 84705.4,
-    "fullName": "Digna Martinez Martinez"
+    "fullName": "Pedro Julio Martínez"
   },
   {
     "id": 1289,
@@ -22828,6 +23247,24 @@
     "descuento_total": 68521.94,
     "sueldo_total_neto": 98441.86,
     "fullName": "Freddy Antonio García Alvarado"
+  },
+  {
+    "id": 1300,
+    "gender": "M",
+    "name": "Edward Alexis  Sanchez De Oleo",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39485,
+    "sueldo_bruto": 166963.8,
+    "otros_ingresos": 0,
+    "total_ingresos": 166963.8,
+    "isr": 27940.25,
+    "afp": 4791.86,
+    "sfs": 4742.4,
+    "otros_descuentos": 64754.34,
+    "descuento_total": 102228.85,
+    "sueldo_total_neto": 64734.95,
+    "fullName": "Edward A Sanchez D Oleo"
   },
   {
     "id": 1302,
@@ -23393,7 +23830,25 @@
     "otros_descuentos": 4478.74,
     "descuento_total": 41775.54,
     "sueldo_total_neto": 124533.77,
-    "fullName": "Maria Gonzalez Martinez"
+    "fullName": "Maria Martinez M"
+  },
+  {
+    "id": 1336,
+    "gender": "F",
+    "name": "Alma R  Mejia A",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 38964,
+    "sueldo_bruto": 166193.77,
+    "otros_ingresos": 0,
+    "total_ingresos": 166193.77,
+    "isr": 27753.27,
+    "afp": 4769.76,
+    "sfs": 4742.4,
+    "otros_descuentos": 72921.44,
+    "descuento_total": 110186.87,
+    "sueldo_total_neto": 56006.9,
+    "fullName": "Alma Rosa Mejia Acosta"
   },
   {
     "id": 1337,
@@ -24747,6 +25202,24 @@
     "fullName": "Maximo Marquez Lorenzo"
   },
   {
+    "id": 1412,
+    "gender": "M",
+    "name": "Osiris  Decena E",
+    "role": "Profesor",
+    "status": "CONTRATADO",
+    "fecha_ingreso": 39600,
+    "sueldo_bruto": 163714.67,
+    "otros_ingresos": 2310,
+    "total_ingresos": 166024.67,
+    "isr": 27151.28,
+    "afp": 4698.61,
+    "sfs": 4742.4,
+    "otros_descuentos": 78180.14,
+    "descuento_total": 114772.43,
+    "sueldo_total_neto": 51252.24,
+    "fullName": "Osiris Antonio Decena Espinal"
+  },
+  {
     "id": 1414,
     "gender": "F",
     "name": "Zulay Altagracia Morales Castillo",
@@ -25000,7 +25473,7 @@
     "otros_descuentos": 18747.36,
     "descuento_total": 55334.84,
     "sueldo_total_neto": 108362.13,
-    "fullName": "José Ricardo Santos Ramírez"
+    "fullName": "Jose Alcantara Ramirez"
   },
   {
     "id": 1428,
@@ -25113,6 +25586,25 @@
     "fullName": "Jose Aníbal Rubio Calcaño"
   },
   {
+    "id": 1434,
+    "gender": "M",
+    "name": "Sabino Fidel  Morla Ortega",
+    "area": "ESCUELA DE IDIOMA",
+    "role": "ENCARGADO REDISENO CURRICUL(18",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 35404,
+    "sueldo_bruto": 163252,
+    "otros_ingresos": 0,
+    "total_ingresos": 163252,
+    "isr": 27038.93,
+    "afp": 4685.33,
+    "sfs": 4742.4,
+    "otros_descuentos": 53694.14,
+    "descuento_total": 90160.8,
+    "sueldo_total_neto": 73091.2,
+    "fullName": "Sabino Morla O"
+  },
+  {
     "id": 1435,
     "gender": "M",
     "name": "Zacarias  Cordero Tiburcio",
@@ -25203,6 +25695,24 @@
     "descuento_total": 80981.22,
     "sueldo_total_neto": 82175.14,
     "fullName": "Elizabeth Mejia"
+  },
+  {
+    "id": 1440,
+    "gender": "M",
+    "name": "Miguel  Bonifacio P",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 40422,
+    "sueldo_bruto": 163094.87,
+    "otros_ingresos": 0,
+    "total_ingresos": 163094.87,
+    "isr": 27000.78,
+    "afp": 4680.82,
+    "sfs": 4742.4,
+    "otros_descuentos": 26888.62,
+    "descuento_total": 63312.62,
+    "sueldo_total_neto": 99782.25,
+    "fullName": "Miguel A Bonifacio Peña"
   },
   {
     "id": 1441,
@@ -25730,7 +26240,7 @@
     "otros_descuentos": 60212.86,
     "descuento_total": 96403.63,
     "sueldo_total_neto": 97242.29,
-    "fullName": "Maria Gonzalez Castillo"
+    "fullName": "Wilson Castillo Gonzalez"
   },
   {
     "id": 1470,
@@ -26044,6 +26554,24 @@
     "fullName": "Lucila Luciano Acosta"
   },
   {
+    "id": 1487,
+    "gender": "M",
+    "name": "Cecilio  De Los S Gonzalez",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39326,
+    "sueldo_bruto": 161825,
+    "otros_ingresos": 32550,
+    "total_ingresos": 194375,
+    "isr": 26692.42,
+    "afp": 4644.38,
+    "sfs": 4742.4,
+    "otros_descuentos": 44020.66,
+    "descuento_total": 80099.86,
+    "sueldo_total_neto": 114275.14,
+    "fullName": "Cecilio De los Santos G"
+  },
+  {
     "id": 1488,
     "gender": "F",
     "name": "Lorenza  Rodriguez Nunez",
@@ -26078,6 +26606,24 @@
     "descuento_total": 41848.92,
     "sueldo_total_neto": 119976.04,
     "fullName": "Yenni Cuevas Aquino"
+  },
+  {
+    "id": 1490,
+    "gender": "M",
+    "name": "Roberto  Cabrera A",
+    "role": "Profesor",
+    "status": "INTERINO",
+    "fecha_ingreso": 39326,
+    "sueldo_bruto": 161824,
+    "otros_ingresos": 34020,
+    "total_ingresos": 195844,
+    "isr": 26692.18,
+    "afp": 4644.35,
+    "sfs": 4742.4,
+    "otros_descuentos": 51525,
+    "descuento_total": 87603.93,
+    "sueldo_total_neto": 108240.07,
+    "fullName": "Roberto Antonio Cabrera Alcantara"
   },
   {
     "id": 1491,
@@ -27027,6 +27573,25 @@
     "fullName": "Cesar Antonio Reyes"
   },
   {
+    "id": 1544,
+    "gender": "F",
+    "name": "Luisa  Taveras M",
+    "area": "UASD- SANTIAGO",
+    "role": "Asistente Administrativo",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 40077,
+    "sueldo_bruto": 159733.39,
+    "otros_ingresos": 0,
+    "total_ingresos": 159733.39,
+    "isr": 26184.53,
+    "afp": 4584.35,
+    "sfs": 4742.4,
+    "otros_descuentos": 45866.38,
+    "descuento_total": 81377.66,
+    "sueldo_total_neto": 78355.73,
+    "fullName": "Luisa Altagracia Taveras Medina"
+  },
+  {
     "id": 1545,
     "gender": "F",
     "name": "Concepcion Aurora Sierra Guerrero de cuello",
@@ -27371,6 +27936,24 @@
     "descuento_total": 35634.56,
     "sueldo_total_neto": 123355.92,
     "fullName": "Patricia Bautista Camara"
+  },
+  {
+    "id": 1566,
+    "gender": "F",
+    "name": "Madelin E Martinez B",
+    "role": "Profesor",
+    "status": "INTERINO",
+    "fecha_ingreso": 41498,
+    "sueldo_bruto": 158990.48,
+    "otros_ingresos": 0,
+    "total_ingresos": 158990.48,
+    "isr": 26004.13,
+    "afp": 4563.03,
+    "sfs": 4742.4,
+    "otros_descuentos": 725,
+    "descuento_total": 36034.56,
+    "sueldo_total_neto": 122955.92,
+    "fullName": "Madelin Estefani Martinez Bonifacio"
   },
   {
     "id": 1567,
@@ -28458,7 +29041,7 @@
     "otros_descuentos": 27655.58,
     "descuento_total": 62708.41,
     "sueldo_total_neto": 95336.59,
-    "fullName": "Victor Feliz Perez"
+    "fullName": "Carmen Perez Feliz"
   },
   {
     "id": 1629,
@@ -29503,7 +30086,7 @@
     "otros_descuentos": 80570.18,
     "descuento_total": 115084.46,
     "sueldo_total_neto": 40977.1,
-    "fullName": "Hector Medina Disla"
+    "fullName": "Hector Tejeda Medina"
   },
   {
     "id": 1687,
@@ -29776,6 +30359,24 @@
     "descuento_total": 38615.67,
     "sueldo_total_neto": 153581.37,
     "fullName": "Lucia Peña Valoy"
+  },
+  {
+    "id": 1702,
+    "gender": "F",
+    "name": "Oneyda L  Perez U",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 40204,
+    "sueldo_bruto": 155264.96,
+    "otros_ingresos": 27389.41,
+    "total_ingresos": 182654.37,
+    "isr": 27666.67,
+    "afp": 4456.1,
+    "sfs": 4720.05,
+    "otros_descuentos": 5830.5,
+    "descuento_total": 42673.32,
+    "sueldo_total_neto": 139981.05,
+    "fullName": "Oneyda Lucia Perez Uceta"
   },
   {
     "id": 1703,
@@ -31858,7 +32459,7 @@
     "otros_descuentos": 78996.72,
     "descuento_total": 111914.82,
     "sueldo_total_neto": 69318.8,
-    "fullName": "Pastor De La Rosa Ventura"
+    "fullName": "Bertilia De La Rosa Goodin"
   },
   {
     "id": 1817,
@@ -32059,6 +32660,24 @@
     "descuento_total": 63650.73,
     "sueldo_total_neto": 86492.89,
     "fullName": "Olaya Ondina Dotel Caraballo"
+  },
+  {
+    "id": 1828,
+    "gender": "M",
+    "name": "Gerardo  Pieter G",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39485,
+    "sueldo_bruto": 150143.36,
+    "otros_ingresos": 23610,
+    "total_ingresos": 173753.36,
+    "isr": 23900.34,
+    "afp": 4309.11,
+    "sfs": 4564.36,
+    "otros_descuentos": 65438.55,
+    "descuento_total": 98212.36,
+    "sueldo_total_neto": 75541,
+    "fullName": "Gerardo Jose Pieter Garrido"
   },
   {
     "id": 1829,
@@ -33786,6 +34405,24 @@
     "fullName": "Pedro Sing Ureña"
   },
   {
+    "id": 1925,
+    "gender": "M",
+    "name": "Hector Eligio  Mercedes Mendez",
+    "role": "COORDINADOR RESIDENCIAS MED(26",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 38586,
+    "sueldo_bruto": 144313.74,
+    "otros_ingresos": 0,
+    "total_ingresos": 144313.74,
+    "isr": 22529.07,
+    "afp": 4141.8,
+    "sfs": 4387.14,
+    "otros_descuentos": 13476.71,
+    "descuento_total": 44534.72,
+    "sueldo_total_neto": 99779.02,
+    "fullName": "Hector Mercedes M"
+  },
+  {
     "id": 1926,
     "gender": "F",
     "name": "Gertrudis De Los A  Aquino Montano",
@@ -33875,6 +34512,24 @@
     "descuento_total": 99446.64,
     "sueldo_total_neto": 61238.76,
     "fullName": "Maura Martinez Rodriguez"
+  },
+  {
+    "id": 1932,
+    "gender": "F",
+    "name": "Maria E  Marte R",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39326,
+    "sueldo_bruto": 143400.66,
+    "otros_ingresos": 0,
+    "total_ingresos": 143400.66,
+    "isr": 22314.29,
+    "afp": 4115.6,
+    "sfs": 4359.38,
+    "otros_descuentos": 29959.75,
+    "descuento_total": 60749.02,
+    "sueldo_total_neto": 82651.64,
+    "fullName": "María Esther Marte"
   },
   {
     "id": 1933,
@@ -34572,6 +35227,24 @@
     "fullName": "Cristina Laurencio Jimenez"
   },
   {
+    "id": 1972,
+    "gender": "F",
+    "name": "Yindhira  Taveras C",
+    "role": "Profesor",
+    "status": "CONTRATADO",
+    "fecha_ingreso": 41913,
+    "sueldo_bruto": 141779.87,
+    "otros_ingresos": 29318.35,
+    "total_ingresos": 171098.22,
+    "isr": 28829.59,
+    "afp": 4069.08,
+    "sfs": 4310.11,
+    "otros_descuentos": 16429.59,
+    "descuento_total": 53638.37,
+    "sueldo_total_neto": 117459.85,
+    "fullName": "Yindhira Yajaira Taveras Canela"
+  },
+  {
     "id": 1973,
     "gender": "M",
     "name": "Raúl Santiago González Pantaleón",
@@ -34990,7 +35663,7 @@
     "otros_descuentos": 77224.78,
     "descuento_total": 107036.3,
     "sueldo_total_neto": 33042.35,
-    "fullName": "Maria Castillo"
+    "fullName": "Maria Gonzalez Castillo"
   },
   {
     "id": 1996,
@@ -35648,6 +36321,24 @@
     "descuento_total": 98854.99,
     "sueldo_total_neto": 38398.47,
     "fullName": "Reynaldo Virgilio Parra Estevez"
+  },
+  {
+    "id": 2032,
+    "gender": "F",
+    "name": "Delta M De La C  Espinal Santana",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 36564,
+    "sueldo_bruto": 137216.82,
+    "otros_ingresos": 0,
+    "total_ingresos": 137216.82,
+    "isr": 20859.69,
+    "afp": 3938.12,
+    "sfs": 4171.39,
+    "otros_descuentos": 1463.6,
+    "descuento_total": 30432.8,
+    "sueldo_total_neto": 106784.02,
+    "fullName": "Delta Espinal Santana"
   },
   {
     "id": 2033,
@@ -37055,7 +37746,7 @@
     "otros_descuentos": 16385.94,
     "descuento_total": 43753.17,
     "sueldo_total_neto": 88020.76,
-    "fullName": "Roberto Byas De La Cruz"
+    "fullName": "Alejandrina Liriano De La Cruz"
   },
   {
     "id": 2112,
@@ -37183,6 +37874,25 @@
     "descuento_total": 55171.31,
     "sueldo_total_neto": 101846.85,
     "fullName": "Luis Geremías Sobet"
+  },
+  {
+    "id": 2119,
+    "gender": "F",
+    "name": "Alexandra A Custodio A",
+    "area": "ESCUELA DE ADMINISTRACION",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 41659,
+    "sueldo_bruto": 131332.49,
+    "otros_ingresos": 0,
+    "total_ingresos": 131332.49,
+    "isr": 19475.55,
+    "afp": 3769.24,
+    "sfs": 3992.51,
+    "otros_descuentos": 12456.49,
+    "descuento_total": 39693.79,
+    "sueldo_total_neto": 91638.7,
+    "fullName": "Alexandra Altagracia Custodio Arias"
   },
   {
     "id": 2120,
@@ -37495,7 +38205,7 @@
     "otros_descuentos": 2175,
     "descuento_total": 28953.32,
     "sueldo_total_neto": 129919.73,
-    "fullName": "Julio Cesar Martinez Martinez"
+    "fullName": "Cesar Augusto Martinez Mateo"
   },
   {
     "id": 2137,
@@ -37842,6 +38552,25 @@
     "descuento_total": 30026.34,
     "sueldo_total_neto": 97956.26,
     "fullName": "Maritza Feliz Feliz"
+  },
+  {
+    "id": 2156,
+    "gender": "M",
+    "name": "Carlos Dario Sousa Sánchez",
+    "area": "ESCUELA DE CIENCIAS POLITICAS",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 41275,
+    "sueldo_bruto": 127908.39,
+    "otros_ingresos": 0,
+    "total_ingresos": 127908.39,
+    "isr": 18670.12,
+    "afp": 3670.97,
+    "sfs": 3888.42,
+    "otros_descuentos": 325,
+    "descuento_total": 26554.51,
+    "sueldo_total_neto": 101353.88,
+    "fullName": "Carlos Sousa S"
   },
   {
     "id": 2158,
@@ -38886,6 +39615,24 @@
     "fullName": "Iris De Los Santos C"
   },
   {
+    "id": 2216,
+    "gender": "F",
+    "name": "Lourdes Yauaire Rodriguez Arias",
+    "role": "Profesor",
+    "status": "INTERINO",
+    "fecha_ingreso": 39692,
+    "sueldo_bruto": 123472.9,
+    "otros_ingresos": 0,
+    "total_ingresos": 123472.9,
+    "isr": 17626.78,
+    "afp": 3543.67,
+    "sfs": 3753.58,
+    "otros_descuentos": 23760.41,
+    "descuento_total": 48684.44,
+    "sueldo_total_neto": 74788.46,
+    "fullName": "Lourdes Y Rodriguez A"
+  },
+  {
     "id": 2217,
     "gender": "M",
     "name": "Carlos M  Estrella",
@@ -38991,7 +39738,7 @@
     "otros_descuentos": 1880.14,
     "descuento_total": 26658.21,
     "sueldo_total_neto": 96318.8,
-    "fullName": "Carmen Rodriguez Aristy"
+    "fullName": "Carmen Rodriguez C"
   },
   {
     "id": 2223,
@@ -39252,6 +39999,24 @@
     "descuento_total": 41217.86,
     "sueldo_total_neto": 80316.44,
     "fullName": "Ariana Indira Luna Martich"
+  },
+  {
+    "id": 2238,
+    "gender": "F",
+    "name": "Carmen M  Garcia D",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39692,
+    "sueldo_bruto": 121206.55,
+    "otros_ingresos": 0,
+    "total_ingresos": 121206.55,
+    "isr": 17093.68,
+    "afp": 3478.63,
+    "sfs": 3684.68,
+    "otros_descuentos": 1125,
+    "descuento_total": 25381.99,
+    "sueldo_total_neto": 95824.56,
+    "fullName": "Carmen Castro Garcia"
   },
   {
     "id": 2239,
@@ -39916,6 +40681,24 @@
     "fullName": "Lourdes Barinas Santana"
   },
   {
+    "id": 2275,
+    "gender": "M",
+    "name": "Rafael Jose  Belliard Gomez",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 38586,
+    "sueldo_bruto": 117503.52,
+    "otros_ingresos": 0,
+    "total_ingresos": 117503.52,
+    "isr": 16222.63,
+    "afp": 3372.35,
+    "sfs": 3572.11,
+    "otros_descuentos": 2580.14,
+    "descuento_total": 25747.23,
+    "sueldo_total_neto": 91756.29,
+    "fullName": "Rafael Belliard G"
+  },
+  {
     "id": 2276,
     "gender": "M",
     "name": "Zacarias  Navarro Roa",
@@ -40245,6 +41028,24 @@
     "fullName": "Elvin Francisco Concepcion Restituyo"
   },
   {
+    "id": 2294,
+    "gender": "M",
+    "name": "Miguel A  Valoy R",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 40042,
+    "sueldo_bruto": 116291.61,
+    "otros_ingresos": 28710,
+    "total_ingresos": 145001.61,
+    "isr": 15937.56,
+    "afp": 3337.57,
+    "sfs": 3535.26,
+    "otros_descuentos": 122190.22,
+    "descuento_total": 145000.61,
+    "sueldo_total_neto": 1,
+    "fullName": "Miguel Alberto Valoy Ramirez"
+  },
+  {
     "id": 2295,
     "gender": "F",
     "name": "Betania Celeste Severino Ramos",
@@ -40406,7 +41207,7 @@
     "otros_descuentos": 325,
     "descuento_total": 22833.53,
     "sueldo_total_neto": 135377.47,
-    "fullName": "Elpidio Antonio Perez Vargas"
+    "fullName": "Raul Perez Vargas"
   },
   {
     "id": 2304,
@@ -40755,6 +41556,24 @@
     "fullName": "Maria Del Carmen Navarro Zapata"
   },
   {
+    "id": 2324,
+    "gender": "M",
+    "name": "Carlos M  Gratereaux H",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 39678,
+    "sueldo_bruto": 113248.58,
+    "otros_ingresos": 47730,
+    "total_ingresos": 160978.58,
+    "isr": 15221.76,
+    "afp": 3250.23,
+    "sfs": 3442.76,
+    "otros_descuentos": 19789.16,
+    "descuento_total": 41703.91,
+    "sueldo_total_neto": 119274.67,
+    "fullName": "Carlos Manuel Gratereaux Hernandez"
+  },
+  {
     "id": 2325,
     "gender": "M",
     "name": "ERIC TOMAS BERIGUETE G.",
@@ -41028,7 +41847,7 @@
     "otros_descuentos": 14825,
     "descuento_total": 36113.97,
     "sueldo_total_neto": 104918.44,
-    "fullName": "Felix Otoniel Estevez Almengo"
+    "fullName": "Felix Estevez SaintHilaire"
   },
   {
     "id": 2343,
@@ -42377,6 +43196,25 @@
     "fullName": "Carlos Despradel B"
   },
   {
+    "id": 2417,
+    "gender": "F",
+    "name": "Mariel E  Garcia R",
+    "area": "ESCUELA DE ADMINISTRACION",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 40210,
+    "sueldo_bruto": 103196.26,
+    "otros_ingresos": 0,
+    "total_ingresos": 103196.26,
+    "isr": 12857.21,
+    "afp": 2961.73,
+    "sfs": 3137.17,
+    "otros_descuentos": 1025,
+    "descuento_total": 19981.11,
+    "sueldo_total_neto": 83215.15,
+    "fullName": "Mariel Elisa Garcia Rojas"
+  },
+  {
     "id": 2418,
     "gender": "M",
     "name": "Pedro Pascual Olivero García",
@@ -42634,6 +43472,25 @@
     "fullName": "Luz Isabel Gonzalez Suero"
   },
   {
+    "id": 2432,
+    "gender": "M",
+    "name": "Juan J  Gonzalez L",
+    "area": "ESCUELA DE CONTABILIDAD",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 39326,
+    "sueldo_bruto": 100933.04,
+    "otros_ingresos": 0,
+    "total_ingresos": 100933.04,
+    "isr": 12324.84,
+    "afp": 2896.78,
+    "sfs": 3068.36,
+    "otros_descuentos": 325,
+    "descuento_total": 18614.98,
+    "sueldo_total_neto": 82318.06,
+    "fullName": "Juan Josè Gonzàlez Lòpez"
+  },
+  {
     "id": 2433,
     "gender": "M",
     "name": "Ivan Geronimo Sanchez Mejia",
@@ -42742,7 +43599,7 @@
     "otros_descuentos": 82230.71,
     "descuento_total": 100349.13,
     "sueldo_total_neto": 1,
-    "fullName": "Ramon Onesimo Nuñez Fernandez"
+    "fullName": "Ramon Fernandez"
   },
   {
     "id": 2440,
@@ -43453,7 +44310,7 @@
     "otros_descuentos": 4675,
     "descuento_total": 21270.35,
     "sueldo_total_neto": 73904.99,
-    "fullName": "Maria Lopez Gonzalez"
+    "fullName": "Maria Magdalena Gonzalez Gonzalez"
   },
   {
     "id": 2482,
@@ -43789,6 +44646,24 @@
     "fullName": "Tomas Gonzalez C"
   },
   {
+    "id": 2500,
+    "gender": "F",
+    "name": "Ramona M  Moreno S",
+    "role": "Profesor",
+    "status": "INTERINO",
+    "fecha_ingreso": 38964,
+    "sueldo_bruto": 93461.88,
+    "otros_ingresos": 0,
+    "total_ingresos": 93461.88,
+    "isr": 10567.44,
+    "afp": 2682.36,
+    "sfs": 2841.24,
+    "otros_descuentos": 2176.87,
+    "descuento_total": 18267.91,
+    "sueldo_total_neto": 75193.97,
+    "fullName": "Ramona Moreno Sanchez"
+  },
+  {
     "id": 2501,
     "gender": "F",
     "name": "Maria Magdalena Salcedo Dominguez",
@@ -44061,24 +44936,6 @@
     "descuento_total": 18092.85,
     "sueldo_total_neto": 73555.59,
     "fullName": "Henry Luis Medina Jones"
-  },
-  {
-    "id": 2519,
-    "gender": "F",
-    "name": "Alejandra Victoria De Jesus Liriano De La Cruz",
-    "role": "Profesor",
-    "status": "SIN ASIG",
-    "fecha_ingreso": 1,
-    "sueldo_bruto": 91577.17,
-    "otros_ingresos": 5950,
-    "total_ingresos": 97527.17,
-    "isr": 11523.84,
-    "afp": 2628.26,
-    "sfs": 2783.95,
-    "otros_descuentos": 325,
-    "descuento_total": 17261.05,
-    "sueldo_total_neto": 80266.12,
-    "fullName": "Alejandrina Liriano De La Cruz"
   },
   {
     "id": 2520,
@@ -44871,6 +45728,24 @@
     "fullName": "Manuel Antonio Cochón Aranda"
   },
   {
+    "id": 2566,
+    "gender": "M",
+    "name": "Manuel R  Ciprian C",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 38599,
+    "sueldo_bruto": 85280.78,
+    "otros_ingresos": 0,
+    "total_ingresos": 85280.78,
+    "isr": 8643.04,
+    "afp": 2447.56,
+    "sfs": 2592.54,
+    "otros_descuentos": 325,
+    "descuento_total": 14008.14,
+    "sueldo_total_neto": 71272.64,
+    "fullName": "Manuel Ramón Ciprian Castillo"
+  },
+  {
     "id": 2567,
     "gender": "F",
     "name": "Jenny Annelisse Garrido Gautreaux",
@@ -45014,6 +45889,25 @@
     "descuento_total": 29891.36,
     "sueldo_total_neto": 91993.87,
     "fullName": "Maria Pineda Gomera"
+  },
+  {
+    "id": 2576,
+    "gender": "M",
+    "name": "Guillermo E Jimenez S",
+    "area": "ESCUELA DE MEDICINA",
+    "role": "Profesor",
+    "status": "DE CARRERA",
+    "fecha_ingreso": 41699,
+    "sueldo_bruto": 83016.92,
+    "otros_ingresos": 0,
+    "total_ingresos": 83016.92,
+    "isr": 8110.52,
+    "afp": 2382.59,
+    "sfs": 2523.71,
+    "otros_descuentos": 325,
+    "descuento_total": 13341.82,
+    "sueldo_total_neto": 69675.1,
+    "fullName": "Guillermo Enrique Jimenez Solano"
   },
   {
     "id": 2577,
@@ -45177,7 +46071,7 @@
     "otros_descuentos": 22905.08,
     "descuento_total": 35618.87,
     "sueldo_total_neto": 46368.46,
-    "fullName": "Ramon Arturo Jimenez Martinez"
+    "fullName": "Ramon Martinez Portorreal"
   },
   {
     "id": 2586,
@@ -45547,7 +46441,7 @@
     "otros_descuentos": 3171.5,
     "descuento_total": 15012.75,
     "sueldo_total_neto": 64010.07,
-    "fullName": "Carlos Contreras Columna"
+    "fullName": "Jose Contreras P"
   },
   {
     "id": 2606,
@@ -46011,6 +46905,24 @@
     "fullName": "Mercedes Esmeralda Luciano Luciano"
   },
   {
+    "id": 2631,
+    "gender": "M",
+    "name": "RAYNER B LANTIGUA A",
+    "role": "Profesor",
+    "status": "INTERINO",
+    "fecha_ingreso": 1,
+    "sueldo_bruto": 76063.04,
+    "otros_ingresos": 0,
+    "total_ingresos": 76063.04,
+    "isr": 6509.42,
+    "afp": 2183.01,
+    "sfs": 2312.32,
+    "otros_descuentos": 2035.56,
+    "descuento_total": 13040.31,
+    "sueldo_total_neto": 63022.73,
+    "fullName": "Rayner Bienvenido Lantigua Alvarado"
+  },
+  {
     "id": 2632,
     "gender": "F",
     "name": "Ydalia Yanahid  Martinez Mejia",
@@ -46156,7 +47068,7 @@
     "otros_descuentos": 23973.71,
     "descuento_total": 34718.01,
     "sueldo_total_neto": 40291.77,
-    "fullName": "Maria Martinez M"
+    "fullName": "Diana Martinez Martinez"
   },
   {
     "id": 2640,
@@ -49092,7 +50004,7 @@
     "otros_descuentos": 0,
     "descuento_total": 4480.32,
     "sueldo_total_neto": 60828.21,
-    "fullName": "Valerio De La Cruz"
+    "fullName": "Noris De La Cruz De La Cruz"
   },
   {
     "id": 2816,
@@ -49995,7 +50907,7 @@
     "otros_descuentos": 325,
     "descuento_total": 3573.54,
     "sueldo_total_neto": 38633.28,
-    "fullName": "Stalyn Ramon Nunez Hernandez"
+    "fullName": "Ramon Nuñez L"
   },
   {
     "id": 2895,
@@ -50141,25 +51053,6 @@
     "descuento_total": 42205.82,
     "sueldo_total_neto": 1,
     "fullName": "Josefina Arias Ventura"
-  },
-  {
-    "id": 2905,
-    "gender": "F",
-    "name": "Mency Yoerlyn Martinez",
-    "area": "ESCUELA DE IDIOMAS",
-    "role": "PROFESOR AYUDANTE A TIEMPO (25",
-    "status": "INTERINO",
-    "fecha_ingreso": 42604,
-    "sueldo_bruto": 42206.82,
-    "otros_ingresos": 0,
-    "total_ingresos": 42206.82,
-    "isr": 754.11,
-    "afp": 1211.34,
-    "sfs": 1283.09,
-    "otros_descuentos": 2025,
-    "descuento_total": 5273.54,
-    "sueldo_total_neto": 36933.28,
-    "fullName": "Diana Martinez Martinez"
   },
   {
     "id": 2906,
@@ -50454,7 +51347,25 @@
     "otros_descuentos": 325,
     "descuento_total": 3573.54,
     "sueldo_total_neto": 38633.28,
-    "fullName": "Carlos Sousa S"
+    "fullName": "Carlos Montaño Silvestre"
+  },
+  {
+    "id": 2932,
+    "gender": "F",
+    "name": "Michelle  Pierre U",
+    "role": "PROFESOR AYUDANTE A TIEMPO (25",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 40204,
+    "sueldo_bruto": 42206.82,
+    "otros_ingresos": 0,
+    "total_ingresos": 42206.82,
+    "isr": 754.11,
+    "afp": 1211.34,
+    "sfs": 1283.09,
+    "otros_descuentos": 6325,
+    "descuento_total": 9573.54,
+    "sueldo_total_neto": 32633.28,
+    "fullName": "Michelle Altagracia Pierre Ureña"
   },
   {
     "id": 2933,
@@ -51153,6 +52064,24 @@
     "fullName": "Rose Nina Estrella"
   },
   {
+    "id": 2978,
+    "gender": "F",
+    "name": "Rosanna  Lopez P",
+    "role": "Profesor",
+    "status": "SIN ASIG",
+    "fecha_ingreso": 40204,
+    "sueldo_bruto": 37031.64,
+    "otros_ingresos": 0,
+    "total_ingresos": 37031.64,
+    "isr": 23.71,
+    "afp": 1062.81,
+    "sfs": 1125.76,
+    "otros_descuentos": 34468.08,
+    "descuento_total": 36680.36,
+    "sueldo_total_neto": 351.28,
+    "fullName": "Rosanna Maria Lopez Polanco"
+  },
+  {
     "id": 2979,
     "gender": "M",
     "name": "Ramirez Feliz  Jose Ernesto",
@@ -51833,7 +52762,7 @@
     "otros_descuentos": 325,
     "descuento_total": 1978.37,
     "sueldo_total_neto": 25997.43,
-    "fullName": "Vladimir Marx Rosario Garcia"
+    "fullName": "Vladimir Garcia P"
   },
   {
     "id": 3017,
@@ -52109,24 +53038,6 @@
     "fullName": "Yanilda Natividad Almono Nuñez"
   },
   {
-    "id": 3033,
-    "gender": "M",
-    "name": "Ramon Rolando  Fernandez",
-    "role": "Profesor",
-    "status": "SIN ASIG",
-    "fecha_ingreso": 34708,
-    "sueldo_bruto": 22433.19,
-    "otros_ingresos": 0,
-    "total_ingresos": 22433.19,
-    "isr": 0,
-    "afp": 643.83,
-    "sfs": 681.97,
-    "otros_descuentos": 325,
-    "descuento_total": 1650.8,
-    "sueldo_total_neto": 20782.39,
-    "fullName": "Ramon Fernandez"
-  },
-  {
     "id": 3034,
     "gender": "F",
     "name": "Kenia Lidia Méndez Morillo",
@@ -52161,25 +53072,6 @@
     "descuento_total": 21235.11,
     "sueldo_total_neto": 1,
     "fullName": "Ana Morun"
-  },
-  {
-    "id": 3050,
-    "gender": "M",
-    "name": "ALBERT SANTIAGO DE LA CRUZ",
-    "area": "INSTITUTO DE FISICA",
-    "role": "AUXILIAR DE INVESTIGACION  (10",
-    "status": "INTERINO",
-    "fecha_ingreso": 44620,
-    "sueldo_bruto": 21103.37,
-    "otros_ingresos": 0,
-    "total_ingresos": 21103.37,
-    "isr": 0,
-    "afp": 605.67,
-    "sfs": 641.54,
-    "otros_descuentos": 325,
-    "descuento_total": 1572.21,
-    "sueldo_total_neto": 19531.16,
-    "fullName": "Dominga De La Cruz"
   },
   {
     "id": 3064,
@@ -52620,24 +53512,6 @@
     "descuento_total": 1825.53,
     "sueldo_total_neto": 10027.89,
     "fullName": "Victor Feliz Feliz"
-  },
-  {
-    "id": 3098,
-    "gender": "M",
-    "name": "Dustral O Vicioso De Los Santos",
-    "role": "Profesor",
-    "status": "INTERINO",
-    "fecha_ingreso": 36404,
-    "sueldo_bruto": 11853.42,
-    "otros_ingresos": 0,
-    "total_ingresos": 11853.42,
-    "isr": 0,
-    "afp": 340.19,
-    "sfs": 360.34,
-    "otros_descuentos": 325,
-    "descuento_total": 1025.53,
-    "sueldo_total_neto": 10827.89,
-    "fullName": "Dustral Vicioso O"
   },
   {
     "id": 3100,
