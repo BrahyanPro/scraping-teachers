@@ -15,6 +15,7 @@ function normalize(name) {
   return name
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\b[A-Z]\b/g, '') // Elimina iniciales sueltas
     .replace(/\s+/g, ' ')
     .trim()
     .toLowerCase()
