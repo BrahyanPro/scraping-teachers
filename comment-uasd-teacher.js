@@ -1,8 +1,8 @@
-import { chromium, firefox } from 'playwright';
+import { firefox } from 'playwright';
 import fs from 'fs/promises';
 import teacherData from './matcheds.json' assert { type: 'json' };
 
-const MAX_CONCURRENT_PAGES = 15; // Número máximo de páginas concurrentes.
+const MAX_CONCURRENT_PAGES = 2; // Número máximo de páginas concurrentes.
 
 const processTeacherData = async () => {
   console.time('ProcessingTime');
@@ -15,7 +15,6 @@ const processTeacherData = async () => {
   const allComments = [];
   const notAvailable = [];
   const queue = teacherData.slice();
-
   while (queue.length > 0) {
     const tasks = queue
       .splice(0, MAX_CONCURRENT_PAGES)
@@ -42,7 +41,7 @@ const processSingleTeacher = async (page, teacher, allComments, notAvailable) =>
   while (retries < maxRetries) {
     try {
       //Go To nuevosemestre.com
-      await page.waitForURL('https://www.nuevosemestre.com/');
+      await page.goto('https://www.nuevosemestre.com/');
       console.log('\x1b[32m%s\x1b[0m', `Processing ${teacher.matchedName}`);
 
       await page.fill('input[name="query"]', teacher.matchedName);
@@ -59,13 +58,34 @@ const processSingleTeacher = async (page, teacher, allComments, notAvailable) =>
         return;
       }
 
-      const teacherData = {
-        name: teacher.name,
-        matchedName: teacher.matchedName,
-        id: teacher.id,
-        comments: await extractComments(page)
-      };
-      allComments.push(teacherData);
+      const opinionText = await page.textContent('a[href*="profesor/"][class*="bg-sky-700"]'); // Selector específico del enlace de opiniones.
+      const numOpiniones = parseInt(opinionText.match(/\d+/)[0]); // Extrae el número de opiniones.
+
+      if (numOpiniones > 0) {
+        await page.click('a[href*="profesor/"][class*="bg-sky-700"]'); // Hace clic en el enlace si hay más de 0 opiniones.
+        await page.waitForNavigation({ waitUntil: 'networkidle' }); // Espera hasta que la red esté casi inactiva.
+
+        const teacherData = {
+          name: teacher.name,
+          matchedName: teacher.matchedName,
+          id: teacher.id
+        };
+
+        teacherData.comments = await extractComments(page);
+        // Handle pagination
+        const totalPages = await page.$$eval(
+          'button[type="button"][wire\\:click*="gotoPage"]',
+          buttons => buttons.length
+        );
+        console.log('Total pages:', totalPages, 'in ', teacher.matchedName);
+        for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+          await page.click(`button[wire\\:click="gotoPage(${pageNumber + 1}, 'page')"]`);
+          await page.waitForNavigation({ waitUntil: 'networkidle' });
+          const comments = await extractComments(page);
+          teacherData.comments.push(...comments);
+        }
+        allComments.push(teacherData);
+      }
       return;
     } catch (error) {
       console.error('Error processing teacher:', teacher.matchedName, error);
@@ -84,12 +104,15 @@ const saveData = async (comments, notAvailable) => {
 };
 
 const extractComments = async page => {
+  //screentshot
   return page.$$eval('div[x-data="{ reply_box_is_visible: false }"]', comments =>
-    comments.map(comment => ({
-      username: comment.querySelector('p').textContent,
-      period: comment.querySelector('p.text-sm').textContent,
-      content: comment.querySelector('p.bg-neutral-300').textContent
-    }))
+    comments.map(comment => {
+      console.log(comment);
+      const username = comment.querySelector('p').textContent;
+      const period = comment.querySelector('p.text-sm').textContent;
+      const content = comment.querySelector('p.bg-neutral-300').textContent;
+      return { username, period, content };
+    })
   );
 };
 
