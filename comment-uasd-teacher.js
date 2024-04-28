@@ -1,6 +1,6 @@
 import { firefox } from 'playwright';
 import fs from 'fs/promises';
-import teacherData from './matcheds.json' assert { type: 'json' };
+import teacherData from './unique_matcheds.json' assert { type: 'json' };
 
 const MAX_CONCURRENT_PAGES = 20; // Número máximo de páginas concurrentes.
 
