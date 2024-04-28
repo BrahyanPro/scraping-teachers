@@ -50,10 +50,14 @@ const processSingleTeacher = async (page, teacher, allComments, notAvailable) =>
         page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 })
       ]);
 
+      //screenShot
+      await page.screenshot({ path: `screenshots/${teacher.matchedName}.png` });
+
       const noOpinionsAvailable = await page.$(
         'img[src="https://www.nuevosemestre.com/images/confused.svg"]'
       );
       if (noOpinionsAvailable) {
+        console.log('No opinions available for:', teacher.matchedName);
         notAvailable.push(teacher);
         return;
       }
@@ -85,6 +89,9 @@ const processSingleTeacher = async (page, teacher, allComments, notAvailable) =>
           teacherData.comments.push(...comments);
         }
         allComments.push(teacherData);
+      } else {
+        console.log('No opinions count available for:', teacher.matchedName);
+        notAvailable.push(teacher);
       }
       return;
     } catch (error) {
@@ -96,9 +103,9 @@ const processSingleTeacher = async (page, teacher, allComments, notAvailable) =>
 
 const saveData = async (comments, notAvailable) => {
   console.log('Saving data...');
-  await fs.writeFile('comments-uasd-teachers-v2.json', JSON.stringify(comments, null, 2));
+  await fs.writeFile('comments-uasd-teachers-v3.json', JSON.stringify(comments, null, 2));
   await fs.writeFile(
-    'not-comments-available-teachers-v2.json',
+    'not-comments-available-teachers-v3.json',
     JSON.stringify(notAvailable, null, 2)
   );
 };
