@@ -49,8 +49,6 @@ const processSingleSubjects = async (page, subject, allConexion, notAvailable) =
       //Go To nuevosemestre.com
       await page.goto(url);
       console.log('\x1b[32m%s\x1b[0m', `Processing ${subject.code}`);
-      //screenShot
-      await page.screenshot({ path: `screenshots/${subjectCode}.png` });
       //Check if subjects are no opinions available
       const noSubjectAviable = await page.$(
         'img[src="https://media1.tenor.com/m/g0Tp5wjXrSgAAAAC/simpsons-batter.gif"]'
