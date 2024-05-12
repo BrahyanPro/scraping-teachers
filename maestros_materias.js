@@ -38,7 +38,7 @@ const processTeacherData = async () => {
   console.timeEnd('ProcessingTime');
 };
 
-const processSingleSubjects = async (page, subject, allComments, notAvailable) => {
+const processSingleSubjects = async (page, subject, allConexion, notAvailable) => {
   const maxRetries = 3; // Número máximo de reintentos.
   let retries = 0;
   while (retries < maxRetries) {
@@ -81,14 +81,12 @@ const processSingleSubjects = async (page, subject, allComments, notAvailable) =
         await page.click(`button[wire\\:click="gotoPage(${pageNumber + 1}, 'page')"]`);
         await page.waitForNavigation({ waitUntil: 'networkidle' });
         const comments = await extractComments(page);
-        teacherData.comments.push(...comments);
+        SubjectData.instructors.push(...comments);
       }
-      allComments.push(teacherData);
-
+      allConexion.push(SubjectData);
       return;
     } catch (error) {
-      console.error('Error processing teacher:', teacher.matchedName, error);
-      // Manejar errores específicos o reintentar según sea necesario
+      console.error('Error processing teacher:', subject.code, error);
     }
   }
 };
@@ -103,16 +101,26 @@ const saveData = async (comments, notAvailable) => {
 };
 
 const extractComments = async page => {
-  //screentshot
-  return page.$$eval('div[x-data="{ reply_box_is_visible: false }"]', comments =>
-    comments.map(comment => {
-      console.log(comment);
-      const username = comment.querySelector('p').textContent;
-      const period = comment.querySelector('p.text-sm').textContent;
-      const content = comment.querySelector('p.bg-neutral-300').textContent;
-      return { username, period, content };
-    })
+  // Espera a que los elementos estén visibles en la página
+  await page.waitForSelector('tr.border-2');
+
+  // Extrae los nombres de los profesores
+  const nombres = await page.$$eval('tr.border-2 td.px-5.py-3 a.underline', elementos =>
+    elementos.map(el => el.textContent.trim())
   );
+
+  console.log(nombres);
+  return nombres;
+  //screentshot
+  //return page.$$eval('div[x-data="{ reply_box_is_visible: false }"]', comments =>
+  //  comments.map(comment => {
+  //    console.log(comment);
+  //    const username = comment.querySelector('p').textContent;
+  //    const period = comment.querySelector('p.text-sm').textContent;
+  //    const content = comment.querySelector('p.bg-neutral-300').textContent;
+  //    return { username, period, content };
+  //  })
+  //);
 };
 
 processTeacherData().catch(console.error); // Inicia el proceso de procesamiento de datos de profesores.
