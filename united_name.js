@@ -5,34 +5,10 @@ import fs from 'fs/promises';
 console.log('Inicio de la comparación de nombres...');
 console.time('Tiempo de ejecución');
 
-const POINTS_BY_SAME_SPOT = 2;
-const POINTS_BY_OCCURRENCE = 1;
-
 const cleanName = name => {
   return name.replace(/\s+/g, ' ').trim(); // Simplifica espacios y remueve espacios extras
 };
-
-const getInitials = name => {
-  return name.split(' ').map(word => word[0]);
-};
-
-const nsemestreNames = listNuevoSemestre.map(item => cleanName(item.name));
 const oursNames = listOurNames.map(item => ({ ...item, cleanedName: cleanName(item.name) }));
-
-const compareInitials = (ourName, semestreName) => {
-  const initialsOurName = getInitials(ourName);
-  const initialsSemestreName = getInitials(semestreName);
-  let points = 0;
-
-  initialsOurName.forEach((initial, i) => {
-    const index = initialsSemestreName.indexOf(initial);
-    if (index !== -1) {
-      points += index === i ? POINTS_BY_SAME_SPOT : POINTS_BY_OCCURRENCE;
-    }
-  });
-
-  return points;
-};
 
 const compareNames = (name1, name2) => {
   const name1Words = cleanName(name1).toLowerCase().split(' ');
@@ -48,7 +24,6 @@ const unmatched = [];
 const prevMatches = new Set();
 
 oursNames.forEach(ourObj => {
-  let maxPoints = 0;
   let highestScore = 0;
   let bestMatch = null;
 
