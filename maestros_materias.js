@@ -108,17 +108,9 @@ const extractComments = async page => {
   );
 
   console.log(nombres);
-  return nombres;
-  //screentshot
-  //return page.$$eval('div[x-data="{ reply_box_is_visible: false }"]', comments =>
-  //  comments.map(comment => {
-  //    console.log(comment);
-  //    const username = comment.querySelector('p').textContent;
-  //    const period = comment.querySelector('p.text-sm').textContent;
-  //    const content = comment.querySelector('p.bg-neutral-300').textContent;
-  //    return { username, period, content };
-  //  })
-  //);
+  return nombres.forEach(nombre => {
+    //Algoritmo de busqueda por nombres
+  });
 };
 
 processTeacherData().catch(console.error); // Inicia el proceso de procesamiento de datos de profesores.
