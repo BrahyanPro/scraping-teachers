@@ -1,7 +1,6 @@
 import { chromium } from 'playwright';
 import allTeachers from './teachers.json' assert { type: 'json' };
 import allSubjects from './subjects.json' assert { type: 'json' };
-import teacherData from './unique_matcheds.json' assert { type: 'json' };
 import fs from 'fs/promises';
 
 console.log('Inicio de la comparación de nombres...');
@@ -32,7 +31,7 @@ const processTeacherData = async () => {
     await Promise.all(tasks);
   }
 
-  await saveData(allComments, notAvailable);
+  await saveData(allConexion, notAvailable);
   await context.close();
   await browser.close();
   console.timeEnd('ProcessingTime');
@@ -67,7 +66,10 @@ const processSingleSubjects = async (page, subject, allConexion, notAvailable) =
         instructors: []
       };
 
-      SubjectData.instructors = await extractComments(page);
+      const [allConections, noConections] = await extractComments(page);
+
+      SubjectData.instructors = allConections;
+      notAvailable.push(...noConections);
       // Handle pagination
       const totalPages = await page.$$eval(
         'button[type="button"][wire\\:click*="gotoPage"]',
@@ -78,8 +80,9 @@ const processSingleSubjects = async (page, subject, allConexion, notAvailable) =
       for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
         await page.click(`button[wire\\:click="gotoPage(${pageNumber + 1}, 'page')"]`);
         await page.waitForNavigation({ waitUntil: 'networkidle' });
-        const comments = await extractComments(page);
+        const [comments, noConection] = await extractComments(page);
         SubjectData.instructors.push(...comments);
+        notAvailable.push(...noConection);
       }
       allConexion.push(SubjectData);
       return;
@@ -91,9 +94,12 @@ const processSingleSubjects = async (page, subject, allConexion, notAvailable) =
 
 const saveData = async (comments, notAvailable) => {
   console.log('Saving data...');
-  await fs.writeFile('comments-uasd-teachers-v3.json', JSON.stringify(comments, null, 2));
   await fs.writeFile(
-    'not-comments-available-teachers-v3.json',
+    './dataScraping/conexion-maestro-materia.json',
+    JSON.stringify(comments, null, 2)
+  );
+  await fs.writeFile(
+    './dataScraping/not-materia-available-for-teachers.json',
     JSON.stringify(notAvailable, null, 2)
   );
 };
@@ -101,19 +107,47 @@ const saveData = async (comments, notAvailable) => {
 const extractComments = async page => {
   // Espera a que los elementos estén visibles en la página
   await page.waitForSelector('tr.border-2');
+  const cleanName = name => {
+    return name.replace(/\s+/g, ' ').trim(); // Simplifica espacios y remueve espacios extras
+  };
+  const compareNames = (name1, name2) => {
+    const name1Words = cleanName(name1).toLowerCase().split(' ');
+    const name2Words = cleanName(name2).toLowerCase().split(' ');
 
+    const commonWords = name1Words.filter(word => name2Words.includes(word)).length;
+    const totalWords = new Set([...name1Words, ...name2Words]).size;
+    return commonWords / totalWords; // Jaccard index for word similarity
+  };
   // Extrae los nombres de los profesores
   const nombres = await page.$$eval('tr.border-2 td.px-5.py-3 a.underline', elementos =>
     elementos.map(el => el.textContent.trim())
   );
 
   const allConections = [];
+  const noConections = [];
+  const prevMatches = new Set();
 
-  nombres.forEach(nombre => {
-    //Algoritmo de busqueda por nombres
+  nombres.forEach(name => {
+    let highestScore = 0;
+    let bestMatch = null;
+
+    allTeachers.forEach(teacher => {
+      const similarityScore = compareNames(name, `${teacher.first_name} ${teacher.last_name}`);
+      // Utilize a more stringent threshold to prevent incorrect matches
+      if (similarityScore > highestScore && similarityScore > 0.5) {
+        highestScore = similarityScore;
+        bestMatch = { ...teacher, matchedName: name };
+      }
+    });
+
+    if (bestMatch) {
+      allConections.push(bestMatch);
+      prevMatches.add(bestMatch.id);
+    } else {
+      noConections.push(name);
+    }
   });
-  console.log(nombres);
-  return allConections;
+  return [allConections, noConections];
 };
 
 processTeacherData().catch(console.error); // Inicia el proceso de procesamiento de datos de profesores.
