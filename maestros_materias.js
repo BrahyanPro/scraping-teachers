@@ -107,10 +107,13 @@ const extractComments = async page => {
     elementos.map(el => el.textContent.trim())
   );
 
-  console.log(nombres);
-  return nombres.forEach(nombre => {
+  const allConections = [];
+
+  nombres.forEach(nombre => {
     //Algoritmo de busqueda por nombres
   });
+  console.log(nombres);
+  return allConections;
 };
 
 processTeacherData().catch(console.error); // Inicia el proceso de procesamiento de datos de profesores.
