@@ -30,16 +30,6 @@
     "credits": 3
   },
   {
-    "id": 4,
-    "name": "Orientación Institucional",
-    "created_at": "2024-04-13T00:34:51.214887+00:00",
-    "code": "DOP-1000",
-    "semester": "Primer Semestre",
-    "practice_hours": 0,
-    "theoretical_hours": 1,
-    "credits": 1
-  },
-  {
     "id": 5,
     "name": "Int A La Filosofía",
     "created_at": "2024-04-13T00:34:51.214887+00:00",
