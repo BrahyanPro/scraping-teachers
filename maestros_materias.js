@@ -93,15 +93,21 @@ const processSingleSubjects = async (page, subject, allConexion, notAvailable) =
 };
 
 const saveData = async (comments, notAvailable) => {
+  const dir = './dataScraping';
   console.log('Saving data...');
-  await fs.writeFile(
-    './dataScraping/conexion-maestro-materia.json',
-    JSON.stringify(comments, null, 2)
-  );
-  await fs.writeFile(
-    './dataScraping/not-materia-available-for-teachers.json',
-    JSON.stringify(notAvailable, null, 2)
-  );
+  try {
+    await fs.access(dir);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      console.log('Directory does not exist, creating it...');
+      await fs.mkdir(dir, { recursive: true }); // Crea el directorio y todos los directorios padres necesarios
+    } else {
+      throw error; // Propaga otros errores que no sean ENOENT
+    }
+  }
+  // Escribir los datos en los archivos dentro del directorio asegurado
+  await fs.writeFile(`${dir}/conexion-maestro-materia.json`, JSON.stringify(comments, null, 2));
+  await fs.writeFile(`${dir}/not-materia-available.json`, JSON.stringify(notAvailable, null, 2));
 };
 
 const extractComments = async page => {
