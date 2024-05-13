@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-import allTeachers from './teachers.json' assert { type: 'json' };
+import allTeachers from './matcheds.json' assert { type: 'json' };
 import allSubjects from './subjects.json' assert { type: 'json' };
 import fs from 'fs/promises';
 
@@ -138,7 +138,7 @@ const extractComments = async page => {
     let bestMatch = null;
 
     allTeachers.forEach(teacher => {
-      const similarityScore = compareNames(name, `${teacher.first_name} ${teacher.last_name}`);
+      const similarityScore = compareNames(name, teacher.matchedName);
       // Utilize a more stringent threshold to prevent incorrect matches
       if (similarityScore > highestScore && similarityScore > 0.5) {
         highestScore = similarityScore;
