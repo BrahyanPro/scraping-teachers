@@ -50,9 +50,6 @@ const processSingleTeacher = async (page, teacher, allComments, notAvailable) =>
         page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 })
       ]);
 
-      //screenShot
-      await page.screenshot({ path: `screenshots/${teacher.matchedName}.png` });
-
       const noOpinionsAvailable = await page.$(
         'img[src="https://www.nuevosemestre.com/images/confused.svg"]'
       );
